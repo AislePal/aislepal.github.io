@@ -42,11 +42,9 @@ const {
             <Fragment set:html={image} />
           ) : (
             <Image
-              class="inset-0 w-full rounded-md md:absolute md:h-full dark:bg-slate-700"
-              widths={[400, 768]}
+              class="mx-auto w-full rounded-lg"
+              widths={[400, 768, 1024]}
               sizes="(max-width: 768px) 100vw, 432px"
-              width={432}
-              height={768}
               layout="contained"
               src={image?.src}
               alt={image?.alt || ''}
