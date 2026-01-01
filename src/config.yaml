@@ -4,8 +4,8 @@ site:
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: null # Replace with our Google Site Verification ID
-
+  googleSiteVerificationId: _5HVJk7ARa0NJ7WjqcOzRSHybppMUGq_4wqiLfXDz3w
+	
 # Default SEO metadata
 metadata:
   title:
