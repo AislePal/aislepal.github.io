@@ -1,0 +1,131 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Transition from '~/components/widgets/Transition.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'AislePal',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="The in-store intelligence gap"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Early Access',
+        href: '#contact',
+      },
+      {
+        variant: 'secondary',
+        text: 'See How it Works',
+        href: '#how-it-works',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/aisle_navigation_on_phone.png',
+      alt: 'AislePal on phone',
+    }}
+  >
+    <Fragment slot="title">
+      E-commerce platforms know what your customers want. Your store doesn't have to fall behind.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      AislePal captures search behaviour, navigation patterns, and purchase intent inside your physical store giving you the same intelligence that powers online retail.
+    </Fragment>
+
+    <Fragment slot="content">
+      <p class="text-sm text-muted dark:text-slate-400 mt-6">No app · No hardware · Live in days · POS/ERP ready</p>
+    </Fragment>
+  </Hero2>
+
+  <Steps
+    id="how-it-works"
+    tagline="HOW IT WORKS"
+    title="<span class='text-gradient'>One</span> entry point. One continuous <span class='text-gradient'>data loop</span>"
+    subtitle="Every step generates high-quality <span class='text-gradient'>intent data</span>."
+    items={[
+      {
+        title: 'Scan a QR at the entrance or shelf',
+        description: 'Quick entry point — no app download required. Just scan and start shopping.',
+        icon: 'tabler:qrcode',
+      },
+      {
+        title: 'Search naturally ("protein bars under $5")',
+        description: 'Use natural language queries just like online shopping. Find products instantly.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Browse a live catalog (in-stock, ranked, promoted)',
+        description: 'See real-time inventory, product rankings, and active promotions all in one place.',
+        icon: 'tabler:list',
+      },
+      {
+        title: 'Navigate instantly with aisle-level guidance',
+        description: 'Get precise directions to products with step-by-step navigation.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Scan & pay — faster trips, fewer lines',
+        description: 'Complete your purchase as you shop. Skip the checkout line entirely.',
+        icon: 'tabler:shopping-cart',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/aisle_navigation_on_phone.png',
+      alt: 'Aisle navigation on phone',
+    }}
+  />
+
+  <FAQs
+    id="faq"
+    tagline="FAQ"
+    title="Frequently asked question"
+    subtitle="Common questions from retail decision-makers evaluating AislePal."
+    columns={1}
+    items={[
+      { title: 'Do my customers need to download an app?', description: 'Placeholder answer: AislePal runs in the browser. Add the final approved copy here.' },
+      { title: 'What data do you collect?', description: 'Placeholder answer: Add privacy-first data details here once approved.' },
+      { title: 'How does AislePal integrate with our existing systems?', description: 'Placeholder answer: Add integration overview, timelines, and supported systems here.' },
+      { title: 'What if QR adoption is low in my stores?', description: 'Placeholder answer: Add rollout and adoption tactics here.' },
+      { title: 'Is there still value if only a portion of customers use it?', description: 'Placeholder answer: Add impact measurement guidance here.' },
+      { title: 'How does this work with our existing loyalty program?', description: 'Placeholder answer: Add loyalty program flow details here.' },
+      { title: 'Does this add work for our cashiers?', description: 'Placeholder answer: Add cashier workflow notes here.' },
+      { title: 'Are there concerns about theft with mobile checkout?', description: 'Placeholder answer: Add loss-prevention and safety notes here.' },
+      { title: 'What if we want to cancel?', description: 'Placeholder answer: Add offboarding/cancellation policy notes here.' },
+    ]}
+  />
+
+  <Transition size="large">
+    <Fragment slot="text">
+      Without a platform like AislePal, physical retailers will continue losing relevance to online-native experiences. With it, they gain the <span class="text-gradient">intelligence needed to compete</span> — not by copying e-commerce, but by <span class="text-gradient">upgrading the store itself</span>.
+    </Fragment>
+  </Transition>
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book a Demo',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  >
+    <Fragment slot="title"> Let's bring the <span class="text-gradient">advantage</span> back to your store. </Fragment>
+    <Fragment slot="subtitle">
+      <span class="text-gradient">Own</span> the data. <span class="text-gradient">Own</span> the experience. <span
+        class="text-gradient">Own</span
+      > the future.
+    </Fragment>
+  </CallToAction>
+</Layout>
+

@@ -31,7 +31,7 @@ const {
         {
           tagline && (
             <p
-              class="text-base text-primary font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              class="text-base text-accent font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
               set:html={tagline}
             />
           )
@@ -69,14 +69,18 @@ const {
             )
           }
         </div>
-        {content && <Fragment set:html={content} />}
+        {content && (
+            <div class="intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+              <Fragment set:html={content} />
+            </div>
+          )}
       </div>
       <div
         class="intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
       >
         {
           image && (
-            <div class="relative m-auto max-w-5xl">
+            <div class="relative m-auto max-w-sm">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (
@@ -85,8 +89,6 @@ const {
                   widths={[400, 768, 1024, 2040]}
                   sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                   loading="eager"
-                  width={1024}
-                  height={576}
                   {...image}
                 />
               )}

@@ -1,18 +1,18 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-// import Hero from '~/components/widgets/Hero.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
 import Industries from '~/components/widgets/Industries.astro';
 import Transition from '~/components/widgets/Transition.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'AislePal - Capture in-store intent. Increase sales in real time.',
@@ -23,70 +23,155 @@ const metadata = {
 <!-- <Announcement /> -->
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-  <Hero2
+  <Hero
+    tagline="THE IN-STORE INTELLIGENCE GAP"
     actions={[
       {
         variant: 'primary',
-        text: 'Book a Demo',
+        text: 'Get Early Access',
         href: '#contact',
       },
       {
         variant: 'secondary',
-        text: 'Join a Pilot',
+        text: 'See How it Works',
         href: '#contact',
       },
     ]}
     image={{
-      src: '~/assets/images/demo_phone_mockup.png',
+      src: '~/assets/images/hero-image.png',
       alt: 'AislePal Hero Image',
     }}
   >
     <Fragment slot="title">
-      Capture in-store <span class="text-gradient">intent</span>
-      <br />Increase sales in<br /><span class="text-gradient">real time</span>.
+      E-commerce platforms know what your customers want. Your store doesn't have to fall behind.
     </Fragment>
 
     <Fragment slot="subtitle">
-      AislePal turns in-store searches, scans, and interactions into <span class="text-gradient">live intelligence</span
-      > retailers use to drive conversion, promotions, and store decisions.
+      AislePal captures search behaviour, navigation patterns, and purchase intent inside your physical store giving you
+      the same intelligence that powers online retail
     </Fragment>
 
     <Fragment slot="content">
-      <p class="text-sm text-muted dark:text-slate-400 mt-6">No app · No hardware · Live in days · POS/ERP ready</p>
+      <!-- <p class="text-sm text-muted dark:text-slate-400 mt-6">No app · No hardware · Live in days · POS/ERP ready</p> -->
+      <div class="mt-6" style="gap: 28px; display: inline-flex">
+        <div style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
+          <div
+            style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: white; box-shadow: 0px 4px 11px rgba(5, 34, 36, 0.05); overflow: hidden; border-radius: 90px; outline: 0.50px #EBEBEB solid; outline-offset: -0.50px"
+          >
+            <Icon
+              name="tabler:device-mobile-filled"
+              class="text-gray-500 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
+            />
+          </div>
+          <div style="color: #627678; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">
+            No app required
+          </div>
+        </div>
+        <div style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
+          <div
+            style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: white; box-shadow: 0px 4px 11px rgba(5, 34, 36, 0.05); overflow: hidden; border-radius: 90px; outline: 0.50px #EBEBEB solid; outline-offset: -0.50px"
+          >
+            <Icon
+              name="tabler:barrier-block-filled"
+              class="text-gray-500 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
+            />
+          </div>
+          <div style="color: #627678; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">
+            No hardware to install
+          </div>
+        </div>
+        <div style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
+          <div
+            style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: white; box-shadow: 0px 4px 11px rgba(5, 34, 36, 0.05); overflow: hidden; border-radius: 90px; outline: 0.50px #EBEBEB solid; outline-offset: -0.50px"
+          >
+            <Icon
+              name="tabler:clock-filled"
+              class="text-gray-500 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
+            />
+          </div>
+          <div style="color: #627678; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">
+            Delays in 10-14 days
+          </div>
+        </div>
+        <div style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
+          <div
+            style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: white; box-shadow: 0px 4px 11px rgba(5, 34, 36, 0.05); overflow: hidden; border-radius: 90px; outline: 0.50px #EBEBEB solid; outline-offset: -0.50px"
+          >
+            <Icon
+              name="tabler:key-filled"
+              class="text-gray-500 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
+            />
+          </div>
+          <div style="color: #627678; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">
+            Integrates with existing POS/ERP
+          </div>
+        </div>
+      </div>
     </Fragment>
-  </Hero2>
-
-  <!-- WHY NOW Section ******************* -->
+  </Hero>
 
   <Content
-    id="intro"
-    tagline="WHY NOW?"
-    title="<span class='text-gradient'>Online-trained</span> shoppers. <span class='text-gradient'>Offline-blind</span> stores."
-    subtitle="Online retail delivers a convenient, personalized and fast shopping experience. In-store, that intelligence disappears — slowing shoppers, overwhelming decisions, and ending trips early."
-  />
+    title="The Visibility Gap is Growing"
+    subtitle="Every online order generates behavioral data. Most in-store visits generate a receipt and nothing else."
+  >
+    <Fragment slot="content">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- LEFT CARD -->
+        <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900">
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900 mr-3">
+              <Icon name="tabler:world" class="w-6 h-6 text-green-500 dark:text-green-300" />
+            </div>
+            <h3 class="text-2xl font-semibold">What platforms learn</h3>
+          </div>
 
-  <!-- THE PROBLEM Section ******************* -->
-  <Content
-    tagline="THE PROBLEM"
-    title="Retailers see what was bought, not what was <span class='text-gradient'>wanted</span>."
-    subtitle="Without intent visibility, stores can't optimize conversion, layout, promotions, inventory, or labor — costing hundreds of billions in lost in-store sales."
-  />
+          <div class="bg-lime-600/10 dark:bg-green-900/30 rounded-lg p-4 space-y-4">
+            {
+              [
+                'Search queries and browse behavior',
+                'Products viewed but not purchased',
+                'Price sensitivity by category',
+                'Substitution preferences',
+                'Response to recommendations',
+                'Cross-retailer purchase history',
+              ].map((item) => (
+                <div class="flex items-center gap-3">
+                  <Icon name="tabler:circle-check-filled" class="text-green-500" />
+                  <span>{item}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <!-- RIGHT CARD -->
+        <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900">
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-slate-700 mr-3">
+              <Icon name="tabler:world" class="w-6 h-6 text-gray-600 dark:text-gray-300" />
+            </div>
+            <h3 class="text-lg font-semibold">What most stores learn</h3>
+          </div>
 
-  <!-- WHY HARDWARE FAILED Section ******************* -->
-  <Content
-    tagline="WHY HARDWARE FAILED"
-    title="Cameras see actions,<br/>not <span class='text-gradient'>intent</span>."
-    subtitle="Without intent visibility, stores can't optimize conversion, layout, promotions, inventory, or labor — costing hundreds of billions in lost in-store sales."
-  />
-
-  <!-- Intro Transition Section ******************* -->
-  <Transition>
-    <Fragment slot="text">
-      Retail doesn't need more hardware or another omnichannel. It's missing a <span class="text-gradient"
-        >low-friction intelligence layer</span
-      > inside the store.
+          <div class="rounded-lg p-4 space-y-4">
+            {
+              ['Items purchased', 'Transaction total', 'Loyalty ID (if linked)'].map((item) => (
+                <div class="flex items-center gap-3">
+                  <Icon name="tabler:circle-check-filled" class="text-gray-600" />
+                  <span>{item}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-5xl mx-auto mt-6 rounded-lg px-4 py-3 flex items-center justify-center text-sm text-gray-600 dark:text-slate-300"
+      >
+        <Icon name="tabler:exclamation-circle" class="mr-2" />
+        <span> This gap compounds over time. Platforms get smarter with every transaction. Stores stay static. </span>
+      </div>
     </Fragment>
-  </Transition>
+  </Content>
 
   <!-- Meet AislePal Section ******************* -->
   <Content
@@ -120,6 +205,7 @@ const metadata = {
       src: '~/assets/images/consumer_merchant_and_backend_mockup_showcase.png',
       alt: 'AislePal consumer and merchant interface',
     }}
+    splitHalf={true}
   >
     <Fragment slot="content">
       <p class="text-lg text-muted dark:text-slate-400">It gives shoppers one simple entry point to:</p>
@@ -203,6 +289,7 @@ const metadata = {
       src: '~/assets/images/analytics/low_performing_insights.png',
       alt: 'Aisle Analytics dashboard',
     }}
+    splitHalf={true}
   >
     <Fragment slot="content-after-items">
       <p class="text-lg text-muted dark:text-slate-400 mb-6 mt-6">

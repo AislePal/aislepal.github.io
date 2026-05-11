@@ -3,27 +3,27 @@ import { getPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Intro',
-      href: getPermalink('/#intro'),
+      text: 'Home',
+      href: getPermalink('/'),
     },
     {
-      text: 'Solution',
-      href: getPermalink('/#solution'),
+      text: 'How it works',
+      href: getPermalink('/#how-it-works'),
     },
     {
-      text: 'Analytics',
-      href: getPermalink('/#analytics'),
+      text: 'Features',
+      href: getPermalink('/#features'),
     },
     {
-      text: 'ROI',
-      href: getPermalink('/#roi'),
+      text: 'Pricing',
+      href: getPermalink('/#pricing'),
     },
     {
       text: 'FAQ',
       href: getPermalink('/#faq'),
     },
   ],
-  actions: [{ text: 'Book a Demo', href: getPermalink('/#contact') }],
+  actions: [{ text: 'Book a Demo', variant: 'primary', href: getPermalink('/#contact') }],
 };
 
 export const footerData = {
