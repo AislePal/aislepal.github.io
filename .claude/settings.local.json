@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp *)",
+      "Bash(claude plugin *)",
+      "mcp__plugin_figma_figma__whoami",
+      "mcp__plugin_figma_figma__get_design_context",
+      "PowerShell(Get-Content *)",
+      "Bash(npm run *)",
+      "Bash(node -e ' *)",
+      "Bash(Copy-Item *2)",
+      "Bash(npx astro *)"
+    ]
+  }
+}

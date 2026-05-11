@@ -1,4 +1,4 @@
-import { getPermalink, getAsset } from './utils/permalinks';
+import { getAsset, getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -15,15 +15,15 @@ export const headerData = {
       href: getPermalink('/#features'),
     },
     {
-      text: 'Pricing',
-      href: getPermalink('/#pricing'),
+      text: 'Deployment',
+      href: getPermalink('/#setup'),
     },
     {
       text: 'FAQ',
       href: getPermalink('/#faq'),
     },
   ],
-  actions: [{ text: 'Book a Demo', variant: 'primary', href: getPermalink('/#contact') }],
+  actions: [{ text: 'Book a Demo', variant: 'primary' as const, href: getPermalink('https://calendly.com/abdulla-aislepal/30min') }],
 };
 
 export const footerData = {
@@ -74,8 +74,8 @@ export const footerData = {
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Terms', href: '#' }, // getPermalink('/terms')
+    { text: 'Privacy Policy', href: '#' }, // getPermalink('/privacy')
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },

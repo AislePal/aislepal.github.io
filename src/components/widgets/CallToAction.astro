@@ -26,7 +26,7 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div class="max-w-3xl mx-auto text-center p-6 rounded-md mb-32">
+  <div class="cta-card max-w-3xl mx-auto text-center px-10 py-14 rounded-3xl mb-32 border border-[rgba(0,171,184,0.3)] dark:border-[rgba(0,171,184,0.2)] overflow-hidden relative">
     <Headline
       title={title}
       subtitle={subtitle}
@@ -43,7 +43,7 @@ const {
           {Array.isArray(actions) ? (
             actions.map((action) => (
               <div class="flex w-full sm:w-auto">
-                <Button {...(action || {})} class="w-full sm:mb-0" />
+                <Button {...(action || {})} class="w-full sm:mb-0" target="_blank" rel="noopener noreferrer" />
               </div>
             ))
           ) : (
@@ -54,3 +54,25 @@ const {
     }
   </div>
 </WidgetWrapper>
+
+<style>
+  .cta-card {
+    background-color: #ffffff;
+    background-image:
+      linear-gradient(rgba(0, 171, 184, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 171, 184, 0.07) 1px, transparent 1px),
+      radial-gradient(ellipse at 0% 100%, rgba(0, 171, 184, 0.22) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 0%, rgba(0, 171, 184, 0.22) 0%, transparent 55%);
+    background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%;
+  }
+
+  :global(.dark) .cta-card {
+    background-color: #0a1f21;
+    background-image:
+      linear-gradient(rgba(0, 171, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 171, 184, 0.08) 1px, transparent 1px),
+      radial-gradient(ellipse at 0% 100%, rgba(0, 171, 184, 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 0%, rgba(0, 171, 184, 0.18) 0%, transparent 55%);
+    background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%;
+  }
+</style>

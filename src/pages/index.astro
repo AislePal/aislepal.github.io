@@ -3,16 +3,16 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-// import FAQs from '~/components/widgets/FAQs.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Industries from '~/components/widgets/Industries.astro';
-import Transition from '~/components/widgets/Transition.astro';
 import { Icon } from 'astro-icon/components';
+import dashboardMockup from '~/assets/images/dashboard_mockup.png';
+import howItWorks from '~/assets/images/how_it_works.png';
+import deploymentTimeline from '~/assets/images/deployment_timeline.png';
+import erpIntegrations from '~/assets/images/ERP_integrations.png';
 
 const metadata = {
   title: 'AislePal - Capture in-store intent. Increase sales in real time.',
@@ -20,8 +20,8 @@ const metadata = {
 };
 ---
 
-<!-- <Announcement /> -->
 <Layout metadata={metadata}>
+
   <!-- Hero Widget ******************* -->
   <Hero
     tagline="THE IN-STORE INTELLIGENCE GAP"
@@ -29,12 +29,16 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Get Early Access',
-        href: '#contact',
+        href: 'https://calendly.com/abdulla-aislepal/30min',
+        target: '_blank',
+        rel: 'noopener noreferrer',
       },
       {
         variant: 'secondary',
         text: 'See How it Works',
-        href: '#contact',
+        href: 'https://calendly.com/abdulla-aislepal/30min',
+        target: '_blank',
+        rel: 'noopener noreferrer',
       },
     ]}
     image={{
@@ -52,71 +56,31 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="content">
-      <!-- <p class="text-sm text-muted dark:text-slate-400 mt-6">No app · No hardware · Live in days · POS/ERP ready</p> -->
-      <div class="mt-6" style="gap: 28px; display: inline-flex">
-        <div style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-          <div
-            style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: white; box-shadow: 0px 4px 11px rgba(5, 34, 36, 0.05); overflow: hidden; border-radius: 90px; outline: 0.50px #EBEBEB solid; outline-offset: -0.50px"
-          >
-            <Icon
-              name="tabler:device-mobile-filled"
-              class="text-gray-500 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
-            />
+      <div class="mt-6 flex flex-wrap gap-x-7 gap-y-3">
+        {[
+          { icon: 'tabler:device-mobile-filled', label: 'No app required' },
+          { icon: 'tabler:barrier-block-filled', label: 'No hardware to install' },
+          { icon: 'tabler:clock-filled', label: 'Live in 10-14 days' },
+          { icon: 'tabler:key-filled', label: 'Integrates with existing POS/ERP' },
+        ].map(({ icon, label }) => (
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 shrink-0 flex items-center justify-center bg-white rounded-full shadow-sm outline outline-[0.5px] outline-[#EBEBEB]">
+              <Icon name={icon} class="text-gray-500 dark:text-slate-400 w-4 h-4" />
+            </div>
+            <span class="text-[#627678] text-base sm:text-lg font-medium">{label}</span>
           </div>
-          <div style="color: #627678; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">
-            No app required
-          </div>
-        </div>
-        <div style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-          <div
-            style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: white; box-shadow: 0px 4px 11px rgba(5, 34, 36, 0.05); overflow: hidden; border-radius: 90px; outline: 0.50px #EBEBEB solid; outline-offset: -0.50px"
-          >
-            <Icon
-              name="tabler:barrier-block-filled"
-              class="text-gray-500 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
-            />
-          </div>
-          <div style="color: #627678; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">
-            No hardware to install
-          </div>
-        </div>
-        <div style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-          <div
-            style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: white; box-shadow: 0px 4px 11px rgba(5, 34, 36, 0.05); overflow: hidden; border-radius: 90px; outline: 0.50px #EBEBEB solid; outline-offset: -0.50px"
-          >
-            <Icon
-              name="tabler:clock-filled"
-              class="text-gray-500 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
-            />
-          </div>
-          <div style="color: #627678; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">
-            Delays in 10-14 days
-          </div>
-        </div>
-        <div style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-          <div
-            style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: white; box-shadow: 0px 4px 11px rgba(5, 34, 36, 0.05); overflow: hidden; border-radius: 90px; outline: 0.50px #EBEBEB solid; outline-offset: -0.50px"
-          >
-            <Icon
-              name="tabler:key-filled"
-              class="text-gray-500 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
-            />
-          </div>
-          <div style="color: #627678; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">
-            Integrates with existing POS/ERP
-          </div>
-        </div>
+        ))}
       </div>
     </Fragment>
   </Hero>
 
+  <!-- Visibility Gap Section ******************* -->
   <Content
-    title="The Visibility Gap is Growing"
+    title="The <span class='text-gradient'>visibility gap</span> is growing"
     subtitle="Every online order generates behavioral data. Most in-store visits generate a receipt and nothing else."
   >
     <Fragment slot="content">
       <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- LEFT CARD -->
         <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900">
           <div class="flex items-center mb-6">
             <div class="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900 mr-3">
@@ -124,7 +88,6 @@ const metadata = {
             </div>
             <h3 class="text-2xl font-semibold">What platforms learn</h3>
           </div>
-
           <div class="bg-lime-600/10 dark:bg-green-900/30 rounded-lg p-4 space-y-4">
             {
               [
@@ -136,27 +99,25 @@ const metadata = {
                 'Cross-retailer purchase history',
               ].map((item) => (
                 <div class="flex items-center gap-3">
-                  <Icon name="tabler:circle-check-filled" class="text-green-500" />
+                  <Icon name="tabler:circle-check-filled" class="text-green-500 shrink-0" />
                   <span>{item}</span>
                 </div>
               ))
             }
           </div>
         </div>
-        <!-- RIGHT CARD -->
         <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900">
           <div class="flex items-center mb-6">
             <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-slate-700 mr-3">
               <Icon name="tabler:world" class="w-6 h-6 text-gray-600 dark:text-gray-300" />
             </div>
-            <h3 class="text-lg font-semibold">What most stores learn</h3>
+            <h3 class="text-2xl font-semibold">What most stores learn</h3>
           </div>
-
           <div class="rounded-lg p-4 space-y-4">
             {
               ['Items purchased', 'Transaction total', 'Loyalty ID (if linked)'].map((item) => (
                 <div class="flex items-center gap-3">
-                  <Icon name="tabler:circle-check-filled" class="text-gray-600" />
+                  <Icon name="tabler:circle-check-filled" class="text-gray-800 dark:text-slate-300 shrink-0" />
                   <span>{item}</span>
                 </div>
               ))
@@ -164,268 +125,114 @@ const metadata = {
           </div>
         </div>
       </div>
-      <div
-        class="max-w-5xl mx-auto mt-6 rounded-lg px-4 py-3 flex items-center justify-center text-sm text-gray-600 dark:text-slate-300"
-      >
-        <Icon name="tabler:exclamation-circle" class="mr-2" />
-        <span> This gap compounds over time. Platforms get smarter with every transaction. Stores stay static. </span>
+      <div class="max-w-5xl mx-auto mt-6 rounded-lg px-4 py-3 flex items-center justify-center text-sm text-gray-600 dark:text-slate-300">
+        <Icon name="tabler:info-circle" class="mr-2 shrink-0" />
+        <span>This gap compounds over time. Platforms get smarter with every transaction. Stores stay static.</span>
       </div>
     </Fragment>
   </Content>
 
-  <!-- Meet AislePal Section ******************* -->
-  <Content
-    id="solution"
-    tagline="THE SOLUTION"
-    title="Meet <span class='text-gradient'>AislePal</span>"
-    subtitle="AislePal is a <span class='text-gradient'>live</span>, in-store catalog and decision engine delivered as a lightweight web app."
-    items={[
-      {
-        title: 'Discover products',
-        description: 'Browse a live catalog with real-time inventory, rankings, and promotions.',
-        icon: 'tabler:wand',
-      },
-      {
-        title: 'Navigate the store',
-        description: 'Get instant aisle-level guidance to find exactly what you need.',
-        icon: 'tabler:route',
-      },
-      {
-        title: 'Access relevant promotions',
-        description: 'See personalized deals and offers as you shop.',
-        icon: 'tabler:tag',
-      },
-      {
-        title: 'Scan & pay',
-        description: 'Faster trips, fewer lines with optional in-aisle checkout.',
-        icon: 'tabler:scan',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/consumer_merchant_and_backend_mockup_showcase.png',
-      alt: 'AislePal consumer and merchant interface',
-    }}
-    splitHalf={true}
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted dark:text-slate-400">It gives shoppers one simple entry point to:</p>
+  <!-- Hardware vs Data Section ******************* -->
+  <Content isReversed={false} splitHalf={true}>
+    <Fragment slot="title">
+      The hardware approach didn't work. <span class="text-gradient">The data approach will.</span>
     </Fragment>
-    <Fragment slot="content-after-items">
-      <p class="text-lg text-muted dark:text-slate-400 mb-6 mt-8">
-        Behind the scenes, it converts behavior into real-time intelligence retailers can finally act on.
+    <Fragment slot="image">
+      <img
+        src={dashboardMockup.src}
+        alt="AislePal analytics and merchant dashboard"
+        class="mx-auto w-full rounded-lg"
+        style="background-color: white;"
+        loading="lazy"
+      />
+    </Fragment>
+    <Fragment slot="content">
+      <p class="text-lg text-muted dark:text-slate-300 mb-6">
+        Retailers invested heavily in cameras and sensors to understand behavior — but got high costs, privacy issues,
+        and data that didn't drive action.
       </p>
-      <p class="text-lg font-semibold dark:text-white">
-        This is <span class="text-gradient">hybrid shopping</span> — upgrading the physical store with the feedback loops
-        that made online retail powerful.
+      <p class="text-lg text-muted dark:text-slate-300 mb-8">
+        Hardware tracks movement, not intent. Real insight comes from interaction: searches, navigation, and purchase
+        paths. That's what fuels growth.
       </p>
+      <div class="rounded-xl border border-[#4b9ea5]/30 bg-[#4b9ea5]/10 px-6 py-5">
+        <p class="text-lg text-slate-700 dark:text-slate-200">
+          <span class="font-semibold text-[#4b9ea5]">AislePal</span> works because it gives shoppers something
+          valuable — search, navigation, and faster checkout — while generating insight as a byproduct.
+        </p>
+      </div>
     </Fragment>
   </Content>
 
   <!-- HOW IT WORKS Section ******************* -->
-  <Steps
+  <Content
     id="how-it-works"
     tagline="HOW IT WORKS"
-    title="<span class='text-gradient'>One</span> entry point. One continuous <span class='text-gradient'>data loop</span>"
-    subtitle="Every step generates high-quality <span class='text-gradient'>intent data</span>."
-    items={[
-      {
-        title: 'Scan a QR at the entrance or shelf',
-        description: 'Quick entry point — no app download required. Just scan and start shopping.',
-        icon: 'tabler:qrcode',
-      },
-      {
-        title: 'Search naturally ("protein bars under $5")',
-        description: 'Use natural language queries just like online shopping. Find products instantly.',
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Browse a live catalog (in-stock, ranked, promoted)',
-        description: 'See real-time inventory, product rankings, and active promotions all in one place.',
-        icon: 'tabler:list',
-      },
-      {
-        title: 'Navigate instantly with aisle-level guidance',
-        description: 'Get precise directions to products with step-by-step navigation.',
-        icon: 'tabler:map-pin',
-      },
-      {
-        title: 'Scan & pay — faster trips, fewer lines',
-        description: 'Complete your purchase as you shop. Skip the checkout line entirely.',
-        icon: 'tabler:shopping-cart',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/aisle_navigation_on_phone.png',
-      alt: 'Aisle navigation on phone',
-    }}
-  />
-
-  <!-- Aisle Analytics Section ******************* -->
-  <Content
-    id="analytics"
-    isReversed
-    tagline="Aisle Analytics"
-    title="From behavior to decisions — <span class='text-gradient'>instantly</span>"
-    subtitle="Aisle Analytics connects the entire in-store customer journey, capturing every interaction from search to purchase, helping you <span class='text-gradient'>sell more</span>, <span class='text-gradient'>stock smarter</span>, and <span class='text-gradient'>personalize better</span>."
-    items={[
-      {
-        title: 'What shoppers want',
-        description:
-          'Understand customer intent and preferences in real-time through search patterns and engagement data.',
-        icon: 'tabler:user-search',
-      },
-      {
-        title: 'Where they struggle',
-        description: 'Identify friction points and navigation challenges that prevent customers from finding products.',
-        icon: 'tabler:alert-circle',
-      },
-      {
-        title: 'Where sales are being lost',
-        description: 'Pinpoint missed opportunities and abandoned searches to recover lost revenue.',
-        icon: 'tabler:trending-down',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/analytics/low_performing_insights.png',
-      alt: 'Aisle Analytics dashboard',
-    }}
-    splitHalf={true}
+    title="One scan. <span class='text-gradient'>Complete visibility.</span>"
+    subtitle="AislePal delivers a simple QR-based web experience for shoppers — no app required — while capturing the behavioral data you need to compete."
   >
-    <Fragment slot="content-after-items">
-      <p class="text-lg text-muted dark:text-slate-400 mb-6 mt-6">
-        Retailers can optimize inventory, layout, promotions, staffing, and conversion — in real time.
-      </p>
-      <p class="text-lg font-semibold dark:text-white">
-        This becomes the <span class="text-gradient">OS and intelligence decision layer</span> for your store.
-      </p>
+    <Fragment slot="image">
+      <img
+        src={howItWorks.src}
+        alt="AislePal how it works — four steps"
+        class="mx-auto w-full rounded-lg"
+        loading="lazy"
+      />
     </Fragment>
   </Content>
 
-  <!-- Setup & Integration Section ******************* -->
-
-  <Steps
-    id="setup"
-    tagline="Setup & Integration"
-    title="Get up and running <span class='text-gradient'>quickly</span>"
-    subtitle=" <span class='text-gradient'>Seamless integration</span> into your existing ERP systems. CCPA/GDPR aligned. <span class='text-gradient'>No persistent IDs</span>. <span class='text-gradient'>Privacy-first design</span> that complies with data protection regulations."
-    items={[
-      {
-        title: 'Upload store layout',
-        description: 'Import your store floor plan and configure aisle layouts for accurate navigation.',
-        icon: 'tabler:square-number-1',
-      },
-      {
-        title: 'Integrate with POS, ERP, or loyalty programs',
-        description:
-          'Connect with existing systems like SAP, Oracle, or Microsoft Dynamics 365 for unified operations.',
-        icon: 'tabler:square-number-2',
-      },
-      {
-        title: 'Customize and final setup',
-        description: 'Match your brand aesthetics, put up the in-store QR-codes, and provide staff training.',
-        icon: 'tabler:square-number-3',
-      },
-      {
-        title: 'Ready!',
-        description: '',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/ERP_integrations.png',
-      alt: 'ERP integrations',
-    }}
-  >
-    <Fragment slot="content">
-      <div class="mt-6 p-4 bg-blue-50 dark:bg-slate-800 rounded-lg">
-        <p class="text-lg font-semibold dark:text-white mb-2">Go Live & Monitor</p>
-        <p class="text-lg text-muted dark:text-slate-400">
-          Launch the system in <strong class="text-gradient">10-14 days</strong>. Monitor sales, engagement, security
-          alerts, and customer analytics in real-time.
-        </p>
-      </div>
-    </Fragment>
-  </Steps>
-
-  <!-- Loss Prevention Section ******************* -->
-
+  <!-- Analytics Features Section ******************* -->
   <Features
-    id="loss-prevention"
-    isReversed
-    title="Loss Prevention"
-    subtitle="Behavioral shrink reduction through <span class='text-gradient'>real-time visibility</span> and <span class='text-gradient'>anomaly detection</span> — without cameras or added friction."
+    id="features"
+    tagline="Aisle Analytics"
+    title="See what you've been <span class='text-gradient'>missing</span>"
+    subtitle="AislePal Analytics turns in-store behavior into actionable insight."
+    columns={3}
     items={[
       {
-        title: 'Real-time cart visibility',
+        title: 'Search Intelligence',
         description:
-          'Builds a live digital cart as shoppers scan, helping prevent missed items and making the checkout flow clearer for both shoppers and staff.',
-        icon: 'tabler:shopping-cart',
+          "Know exactly what customers are looking for — including products you don't carry yet. Identify demand gaps before they become lost sales.",
+        icon: 'tabler:search',
       },
       {
-        title: 'Anomaly detection',
+        title: 'Conversion Tracking',
         description:
-          'Flags unusual behavior patterns across searches, scans, and exits so teams can address risk without confrontation or surveillance.',
-        icon: 'tabler:alert-triangle',
+          'See the journey from search to shelf to checkout. Understand where customers convert, abandon, or substitute.',
+        icon: 'tabler:eye',
       },
       {
-        title: 'Peak-hour risk coverage',
+        title: 'Out-of-Stock Impact',
         description:
-          'Identifies high-risk time windows and congested zones, helping managers deploy staff where visibility matters most.',
-        icon: 'tabler:clock-hour-4',
+          "Measure the real cost of stockouts. See what customers searched for, couldn't find, and what they did next.",
+        icon: 'tabler:shopping-cart-off',
       },
       {
-        title: 'Frictionless safety by design',
+        title: 'Navigation Patterns',
         description:
-          'Improves in-store safety by reducing confusion and process gaps — preserving a positive shopper experience while lowering controllable shrink.',
-        icon: 'tabler:shield-check',
+          'Understand how customers move through your store. Identify high-traffic zones and optimize product placement.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Promotion Performance',
+        description:
+          'Track promotion engagement from impression to purchase. Know which offers drive action and which get ignored.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Demand Forecasting',
+        description:
+          'Use search and browse data to predict demand before it shows up at the register. Plan inventory based on intent, not just history.',
+        icon: 'tabler:chart-bar',
       },
     ]}
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted dark:text-slate-400 mb-6">
-        Reduces accidental non-scans and opportunistic loss through real-time cart visibility and behavioral anomaly
-        signals — without cameras or added friction.
-      </p>
-    </Fragment>
-  </Features>
-
-  <!-- ROI Section - What Retailers Get ******************* -->
-
-  <Features2
-    id="roi"
-    tagline="ROI's & Value Gain"
-    title="How AislePal <span class='text-gradient'>pays for itself</span>"
-    subtitle="AislePal turns every store visit into <span class='text-gradient'>measurable revenue</span> and marketing opportunities."
-    items={[
-      {
-        title: 'Recovered demand',
-        description:
-          '• Capture "not found" searches <br/>• Redirect shoppers in real time <br/>• Convert lost intent into sales',
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'New revenue',
-        description:
-          '• Contextual promotions based on behavior <br/>• Time-based offers during off-peak hours <br/>• New in-store retail media surfaces',
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Operational efficiency',
-        description: '• Fewer repetitive questions <br/>• Reduced staff cognitive load <br/>• Better labor allocation',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+  />
 
   <!-- Results Section ******************* -->
   <Stats
     id="results"
     tagline="Results"
-    title="The <span class='text-gradient'>impact</span> of AislePal"
+    title="The <span class='text-gradient'>financial case</span>"
     stats={[
       { title: 'Expected NPS lift', amount: '15 pt.' },
       { title: 'FTE efficiency gain', amount: '10%' },
@@ -433,6 +240,41 @@ const metadata = {
       { title: 'Pilot ROI Multiple', amount: '6.5x' },
     ]}
   />
+
+  <!-- Deployment Timeline Section ******************* -->
+  <Content
+    id="setup"
+    tagline="Deployment"
+    title="Live in two weeks. <span class='text-gradient'>No construction required.</span>"
+    subtitle="AislePal deploys without hardware installation or store modifications."
+  >
+    <Fragment slot="image">
+      <img
+        src={deploymentTimeline.src}
+        alt="AislePal deployment timeline — Setup, Integration, Customization, Deployment over 14 days"
+        class="mx-auto w-full rounded-lg"
+        loading="lazy"
+      />
+    </Fragment>
+  </Content>
+
+  <!-- Integrations Section ******************* -->
+  <Content
+    id="integrations"
+    isReversed
+    tagline="Integrations"
+    title="Integrates with your <span class='text-gradient'>existing systems</span>"
+    subtitle="Fully deployed in 14 days. No store closures. No construction. No IT projects that drag on for months."
+  >
+    <Fragment slot="image">
+      <img
+        src={erpIntegrations.src}
+        alt="AislePal integration diagram"
+        class="mx-auto w-full rounded-lg"
+        loading="lazy"
+      />
+    </Fragment>
+  </Content>
 
   <!-- Industries Section ******************* -->
   <Industries
@@ -449,54 +291,71 @@ const metadata = {
     ]}
   />
 
-  <!-- Highlighted Blog Posts Widget ******* -->
-
-  <!-- <BlogLatestPosts title="Find out more content in our Blog" /> -->
-
-  <!-- FAQs Widget ******************* -->
-
-  <!-- <FAQs
+  <!-- FAQs Section ******************* -->
+  <FAQs
     id="faq"
     tagline="FAQ"
-    title="Frequently Asked Questions"
-    subtitle=""
-    classes={{ container: 'max-w-6xl' }}
+    title="Frequently asked <span class='text-gradient'>questions</span>"
+    subtitle="Common questions from retail decision-makers evaluating AislePal."
+    columns={1}
+    classes={{ container: 'max-w-4xl' }}
     items={[
       {
-        title: 'Question?',
-        description: 'Answer to the question.',
+        title: 'Do my customers need to download an app?',
+        description:
+          'No. AislePal runs entirely in the mobile web browser. Customers scan a QR code and immediately access the experience — no app store, no account creation, no friction.',
+        icon: 'tabler:chevron-down',
       },
       {
-        title: 'Question?',
-        description: 'Answer to the question.',
+        title: 'What data do you collect?',
+        description:
+          'AislePal collects anonymous behavioral data: search queries, product views, navigation patterns, and purchase signals. No personal identifiers are stored. The platform is CCPA/GDPR aligned with privacy-first design.',
+        icon: 'tabler:chevron-down',
       },
       {
-        title: 'Question?',
-        description: 'Answer to the question.',
+        title: 'How does AislePal integrate with our existing systems?',
+        description:
+          'AislePal connects to your POS, ERP, and inventory systems through pre-built connectors for SAP, Oracle, Microsoft Dynamics, and others. Most integrations are completed within the first week of deployment.',
+        icon: 'tabler:chevron-down',
       },
       {
-        title: 'Question?',
-        description: 'Answer to the question.',
+        title: 'What if QR adoption is low in my stores?',
+        description:
+          'Even with partial adoption, AislePal delivers meaningful data. A 10–20% scan rate in a high-traffic store generates thousands of behavioral data points per day — more than most loyalty programs capture in a month.',
+        icon: 'tabler:chevron-down',
       },
       {
-        title: 'Question?',
-        description: 'Answer to the question.',
+        title: 'Is there still value if only a portion of customers use it?',
+        description:
+          'Yes. The insights you gain from early adopters are statistically representative of broader shopping behavior. And as customers discover the benefit of instant product search, adoption typically grows organically.',
+        icon: 'tabler:chevron-down',
       },
       {
-        title: 'Question?',
-        description: 'Answer to the question.',
+        title: 'How does this work with our existing loyalty program?',
+        description:
+          'AislePal is complementary to loyalty programs. It captures intent signals from shoppers regardless of whether they are enrolled in your loyalty program, and can be integrated to enrich loyalty profiles over time.',
+        icon: 'tabler:chevron-down',
+      },
+      {
+        title: 'Does this add work for our cashiers?',
+        description:
+          'No. AislePal is designed to reduce friction — not add it. The shopping experience is fully self-serve, and optional mobile checkout is handled by the shopper. Cashiers see no change to their workflow.',
+        icon: 'tabler:chevron-down',
+      },
+      {
+        title: 'Are there concerns about theft with mobile checkout?',
+        description:
+          "AislePal's optional mobile checkout includes audit and reconciliation tools. Loss prevention features like anomaly detection and real-time cart visibility actually reduce shrink compared to standard checkout flows.",
+        icon: 'tabler:chevron-down',
+      },
+      {
+        title: 'What if we want to cancel?',
+        description:
+          'No long-term lock-in. We work on flexible contracts and will work with you to ensure a smooth offboarding if needed.',
+        icon: 'tabler:chevron-down',
       },
     ]}
-  /> -->
-
-  <!-- Final CTA Section *********** -->
-  <Transition size="large">
-    <Fragment slot="text">
-      Without a platform like AislePal, physical retailers will continue losing relevance to online-native experiences.
-      With it, they gain the <span class="text-gradient">intelligence needed to compete</span> — not by copying e-commerce,
-      but by <span class="text-gradient">upgrading the store itself</span>.
-    </Fragment>
-  </Transition>
+  />
 
   <!-- CallToAction Widget *********** -->
   <CallToAction
@@ -504,17 +363,20 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Book an Appointment',
-        href: '#contact',
+        text: 'Book a Demo',
+        href: 'https://calendly.com/abdulla-aislepal/30min',
         icon: 'tabler:calendar',
       },
     ]}
   >
-    <Fragment slot="title"> Let's bring the <span class="text-gradient">advantage</span> back to your store. </Fragment>
+    <Fragment slot="title">
+      Bring platform level intelligence to your <span class="text-gradient">physical store.</span>
+    </Fragment>
     <Fragment slot="subtitle">
       <span class="text-gradient">Own</span> the data. <span class="text-gradient">Own</span> the experience. <span
         class="text-gradient">Own</span
       > the future.
     </Fragment>
   </CallToAction>
+
 </Layout>
