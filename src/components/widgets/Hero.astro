@@ -69,11 +69,13 @@ const {
             )
           }
         </div>
-        {content && (
+        {
+          content && (
             <div class="intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
               <Fragment set:html={content} />
             </div>
-          )}
+          )
+        }
       </div>
       <div
         class="intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"

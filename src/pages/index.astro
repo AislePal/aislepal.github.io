@@ -21,7 +21,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-
   <!-- Hero Widget ******************* -->
   <Hero
     tagline="THE IN-STORE INTELLIGENCE GAP"
@@ -57,19 +56,21 @@ const metadata = {
 
     <Fragment slot="content">
       <div class="mt-6 flex flex-wrap gap-x-7 gap-y-3">
-        {[
-          { icon: 'tabler:device-mobile-filled', label: 'No app required' },
-          { icon: 'tabler:barrier-block-filled', label: 'No hardware to install' },
-          { icon: 'tabler:clock-filled', label: 'Live in 10-14 days' },
-          { icon: 'tabler:key-filled', label: 'Integrates with existing POS/ERP' },
-        ].map(({ icon, label }) => (
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 shrink-0 flex items-center justify-center bg-white rounded-full shadow-sm outline outline-[0.5px] outline-[#EBEBEB]">
-              <Icon name={icon} class="text-gray-500 dark:text-slate-400 w-4 h-4" />
+        {
+          [
+            { icon: 'tabler:device-mobile-filled', label: 'No app required' },
+            { icon: 'tabler:barrier-block-filled', label: 'No hardware to install' },
+            { icon: 'tabler:clock-filled', label: 'Live in 10-14 days' },
+            { icon: 'tabler:key-filled', label: 'Integrates with existing POS/ERP' },
+          ].map(({ icon, label }) => (
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 shrink-0 flex items-center justify-center bg-white rounded-full shadow-sm outline outline-[0.5px] outline-[#EBEBEB]">
+                <Icon name={icon} class="text-gray-500 dark:text-slate-400 w-4 h-4" />
+              </div>
+              <span class="text-[#627678] text-base sm:text-lg font-medium">{label}</span>
             </div>
-            <span class="text-[#627678] text-base sm:text-lg font-medium">{label}</span>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </Fragment>
   </Hero>
@@ -125,7 +126,9 @@ const metadata = {
           </div>
         </div>
       </div>
-      <div class="max-w-5xl mx-auto mt-6 rounded-lg px-4 py-3 flex items-center justify-center text-sm text-gray-600 dark:text-slate-300">
+      <div
+        class="max-w-5xl mx-auto mt-6 rounded-lg px-4 py-3 flex items-center justify-center text-sm text-gray-600 dark:text-slate-300"
+      >
         <Icon name="tabler:info-circle" class="mr-2 shrink-0" />
         <span>This gap compounds over time. Platforms get smarter with every transaction. Stores stay static.</span>
       </div>
@@ -157,8 +160,8 @@ const metadata = {
       </p>
       <div class="rounded-xl border border-[#4b9ea5]/30 bg-[#4b9ea5]/10 px-6 py-5">
         <p class="text-lg text-slate-700 dark:text-slate-200">
-          <span class="font-semibold text-[#4b9ea5]">AislePal</span> works because it gives shoppers something
-          valuable — search, navigation, and faster checkout — while generating insight as a byproduct.
+          <span class="font-semibold text-[#4b9ea5]">AislePal</span> works because it gives shoppers something valuable —
+          search, navigation, and faster checkout — while generating insight as a byproduct.
         </p>
       </div>
     </Fragment>
@@ -378,5 +381,4 @@ const metadata = {
       > the future.
     </Fragment>
   </CallToAction>
-
 </Layout>

@@ -26,7 +26,9 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div class="cta-card max-w-3xl mx-auto text-center px-10 py-14 rounded-3xl mb-32 border border-[rgba(0,171,184,0.3)] dark:border-[rgba(0,171,184,0.2)] overflow-hidden relative">
+  <div
+    class="cta-card max-w-3xl mx-auto text-center px-10 py-14 rounded-3xl mb-32 border border-[rgba(0,171,184,0.3)] dark:border-[rgba(0,171,184,0.2)] overflow-hidden relative"
+  >
     <Headline
       title={title}
       subtitle={subtitle}
@@ -63,7 +65,11 @@ const {
       linear-gradient(90deg, rgba(0, 171, 184, 0.07) 1px, transparent 1px),
       radial-gradient(ellipse at 0% 100%, rgba(0, 171, 184, 0.22) 0%, transparent 55%),
       radial-gradient(ellipse at 100% 0%, rgba(0, 171, 184, 0.22) 0%, transparent 55%);
-    background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%;
+    background-size:
+      28px 28px,
+      28px 28px,
+      100% 100%,
+      100% 100%;
   }
 
   :global(.dark) .cta-card {
@@ -73,6 +79,10 @@ const {
       linear-gradient(90deg, rgba(0, 171, 184, 0.08) 1px, transparent 1px),
       radial-gradient(ellipse at 0% 100%, rgba(0, 171, 184, 0.18) 0%, transparent 55%),
       radial-gradient(ellipse at 100% 0%, rgba(0, 171, 184, 0.18) 0%, transparent 55%);
-    background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%;
+    background-size:
+      28px 28px,
+      28px 28px,
+      100% 100%,
+      100% 100%;
   }
 </style>

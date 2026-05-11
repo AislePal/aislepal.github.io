@@ -23,7 +23,13 @@ export const headerData = {
       href: getPermalink('/#faq'),
     },
   ],
-  actions: [{ text: 'Book a Demo', variant: 'primary' as const, href: getPermalink('https://calendly.com/abdulla-aislepal/30min') }],
+  actions: [
+    {
+      text: 'Book a Demo',
+      variant: 'primary' as const,
+      href: getPermalink('https://calendly.com/abdulla-aislepal/30min'),
+    },
+  ],
 };
 
 export const footerData = {
