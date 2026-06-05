@@ -1,0 +1,133 @@
+GLOBAL
+Tab title:
+AislePal — Lift sales today. Capture intent forever.
+Meta description:
+AislePal is the in-store intelligence layer for physical retail. Faster trips for shoppers. Compounding intent data for retailers.
+Primary CTA: Book a demo
+Secondary CTA: Join a pilot
+Nav links: Problem · How it works · Built for · ROI · FAQ
+
+HERO
+Eyebrow: The in-store intelligence layer
+Headline:
+Lift sales today.
+Capture intent forever.
+Subhead:
+AislePal gives shoppers a faster, easier way to find what they want — and turns every search, scan, and step into the intent data your store has never had.
+Phone callouts: QR scanned · Live inventory · Intent captured
+
+TRUST STRIP
+No app · No hardware · Live in 14 days · POS / ERP ready
+Logo strip label: Built for the systems you already run
+
+TWO GAPS
+Eyebrow: Why in-store falls behind
+Headline: Two gaps are draining physical retail.
+Subhead: E-commerce wins on convenience and intelligence. Stores lose on both — every day, in every aisle.
+Sales gap card:
+Label: The sales gap
+Headline: Friction kills baskets.
+Body: Shoppers can't find products. Aisles are confusing. Out-of-stocks aren't visible until they're at the shelf. Lines slow checkout. Every friction point is a smaller basket — or an abandoned trip.
+Intent gap card:
+Label: The intent gap
+Headline: You see what was bought, not what was wanted.
+Body: E-commerce captures every search, every browse, every abandoned cart. Stores capture transactions — and only after the customer decided, or gave up. The data gap compounds every day.
+Closing line label: The root
+Closing line: Both gaps share one cause: there's no intelligence layer between the shopper and the shelf.
+
+FLYWHEEL
+Eyebrow: How it works
+Headline: One product. Two compounding wins.
+Subhead: Shoppers use AislePal because it's faster. That's how you build the data foundation no competitor can replicate.
+Step 01 — Shopper scans QR
+No app download. No login. Instant access to a live, store-specific catalog.
+Step 02 — Finds, navigates, checks out
+Search, aisle-level guidance, optional in-aisle pay. Faster trips, fuller carts.
+Step 03 — Every action becomes intent data
+Searches, browses, navigation patterns, abandons — all structured, all in real time.
+Step 04 — You act on the data
+Inventory, layout, promotions, personalization — informed by what shoppers actually want.
+Flywheel diagram labels:
+Shopper side: 01 Scan · 02 Shop
+Store side: 03 Capture · 04 Act
+
+TWO SIDES
+Eyebrow: What each side gets
+Headline: Built for the aisle. Built for the dashboard.
+Subhead: AislePal is one product with two interfaces — the shopper-facing web app, and the retailer-facing intelligence platform.
+For shoppers — Convenience that feels like online.
+Discover
+Search naturally — "organic milk under $6." See what's in stock, ranked, and on promotion.
+Navigate
+Aisle-level guidance to every product. No more wandering, no more giving up.
+Check out
+Optional in-aisle scan-and-pay. Skip the line. Faster trips, fuller carts.
+For your store — The intent layer e-commerce has had for 20 years.
+Search intelligence
+Know what shoppers wanted — including products you don't carry. Identify lost sales before they become lost customers.
+Navigation patterns
+See how shoppers actually move through the store. Where they slow down, where they give up. Optimize layout based on behavior.
+Demand forecasting
+Use search and browse signals to predict demand before it hits the register. Plan inventory on intent, not just history.
+
+FINANCIAL CASE
+Eyebrow: The financial case
+Headline: Pays for itself in quarter one. Compounds for years after.
+Subhead: AislePal delivers measurable sales lift on day one. The intent data it captures becomes a strategic asset that grows in value with every shopper.
+Sales side · Lift, measured in the first quarter
+23% — Average basket size increase
+Through personalized recommendations and easier discovery.
+31% — Improvement in promotion ROI
+Through better targeting and real-time performance tracking.
+Intent side · Value, compounding over time
+23% — Reduction in stockout impact
+By identifying demand signals before they reach the register.
+2.4× — Increase in customer insights
+Compared to loyalty program data alone.
+Source line: Based on AislePal pilot data, Q4 2025.
+
+DEPLOYMENT
+Eyebrow: Deployment
+Headline: Live in two weeks. No construction required.
+Subhead: AislePal deploys without hardware installation, store modification, or six-month IT projects.
+Day 1–3 — Setup
+We configure your AislePal instance with your product catalog, store layout, and branding.
+Day 4–7 — Integration
+Connect to your existing POS, ERP, and inventory systems through standard connectors.
+Day 8–10 — Customization
+Tailor the shopper experience: search preferences, promotion logic, navigation rules.
+Day 11–14 — Deployment
+Go live with staff training, in-store QR placement, and our team on-call.
+Integration card:
+Title: Plugs into the systems you already run.
+Body: POS, ERP, inventory, and loyalty — connected in days, not months.
+Integrations: SAP · Oracle · Microsoft Dynamics · NCR · Toast · Shopify POS · Square · Lightspeed · Custom API
+
+FAQ
+Eyebrow: FAQ
+Headline: Questions, honestly answered.
+Q: How fast do retailers see basket lift?
+A: Most pilots see measurable basket-size lift within the first 30 days, driven by easier product discovery and reduced abandonment. The biggest gains arrive in months 2–3 as recommendations and promotions tune to live behavioral data.
+Q: Who owns the data — us or AislePal?
+A: You do. Always. AislePal is the infrastructure that captures and structures your in-store intent data, but every byte belongs to your business. Full export at any time, no lock-in.
+Q: How does this comply with CCPA and GDPR?
+A: AislePal is privacy-first by design. No persistent shopper IDs unless explicitly opted in via your loyalty program. Anonymous session-based capture by default. Data residency, retention windows, and deletion are all configurable per region.
+Q: What happens if a shopper doesn't want to scan the QR?
+A: The store works exactly as it does today. AislePal is purely additive — never required, never gated. Shoppers who scan get a better trip; everyone else shops normally. There's no downside to non-adoption.
+Q: Do we need new hardware?
+A: No. AislePal runs entirely on shoppers' phones via a web app. The only physical change is QR codes at entrances and key shelf locations — printed, mounted, done.
+Q: How does this fit alongside our existing loyalty program?
+A: It enhances it. Loyalty programs tell you who bought what. AislePal tells you what they searched, considered, and skipped. Linked together, they become the most complete picture of an in-store shopper any retailer has ever had.
+
+FINAL CTA
+Headline: Bring the advantage back to your store.
+Subhead: Faster trips today. Smarter decisions forever.
+Buttons: Book a demo · Join a pilot
+
+FOOTER
+Brand tagline: The in-store intelligence layer. Faster trips for shoppers. Compounding intent data for retailers.
+Product: How it works · Built for · ROI
+Company: About · Careers · Contact
+Resources: FAQ · Demo · Pilot program
+Legal: Terms · Privacy
+Bottom: © 2026 AislePal. All rights reserved. · Built for physical retail.

@@ -1,7 +1,7 @@
 {
   "name": "aislepal",
   "version": "1.0.0-beta.52",
-  "description": "AislePal: A platform for retailers to capture in-store intent and increase sales in real time.",
+  "description": "AislePal is the in-store intelligence layer for physical retail. Faster trips for shoppers. Compounding intent data for retailers.",
   "type": "module",
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >= 21.0.0"

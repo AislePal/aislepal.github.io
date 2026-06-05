@@ -3,20 +3,20 @@ import { getAsset, getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Home',
-      href: getPermalink('/'),
+      text: 'Problem',
+      href: getPermalink('/#problem'),
     },
     {
       text: 'How it works',
       href: getPermalink('/#how-it-works'),
     },
     {
-      text: 'Features',
-      href: getPermalink('/#features'),
+      text: 'Industries',
+      href: getPermalink('/#industries'),
     },
     {
-      text: 'Deployment',
-      href: getPermalink('/#setup'),
+      text: 'ROI',
+      href: getPermalink('/#results'),
     },
     {
       text: 'FAQ',
@@ -37,51 +37,31 @@ export const footerData = {
     {
       title: 'Product',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
-      ],
-    },
-    {
-      title: 'Platform',
-      links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'Desktop', href: '#' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: 'How it works', href: getPermalink('/#how-it-works') },
+        { text: 'Built for', href: getPermalink('/#industries') },
+        { text: 'ROI', href: getPermalink('/#results') },
       ],
     },
     {
       title: 'Company',
       links: [
         { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
         { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'Contact', href: '#' },
+      ],
+    },
+    {
+      title: 'Resources',
+      links: [
+        { text: 'FAQ', href: getPermalink('/#faq') },
+        { text: 'Demo', href: 'https://calendly.com/abdulla-aislepal/30min' },
+        { text: 'Pilot program', href: 'https://calendly.com/abdulla-aislepal/30min' },
       ],
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: '#' }, // getPermalink('/terms')
-    { text: 'Privacy Policy', href: '#' }, // getPermalink('/privacy')
+    { text: 'Terms', href: '#' },
+    { text: 'Privacy', href: '#' },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
@@ -90,7 +70,5 @@ export const footerData = {
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: '#' },
   ],
-  footNote: `
-    Copyright © 2025-present AislePal. All trademarks and copyrights belong to their respective owners. Third-party software is subject to its respective licenses.
-  `,
+  footNote: `© 2026 AislePal. All rights reserved. Built for physical retail.`,
 };
