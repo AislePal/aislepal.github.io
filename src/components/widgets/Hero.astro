@@ -18,16 +18,18 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+<section data-hero-scroll class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
   </div>
+
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+
     <div class="py-12 md:py-20">
-      <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
+      <div class="text-center pb-4 md:pb-8 max-w-5xl mx-auto">
         {
           tagline && (
             <p
@@ -36,6 +38,7 @@ const {
             />
           )
         }
+
         {
           title && (
             <h1
@@ -44,6 +47,7 @@ const {
             />
           )
         }
+
         <div class="max-w-3xl mx-auto">
           {
             subtitle && (
@@ -53,6 +57,7 @@ const {
               />
             )
           }
+
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
@@ -69,6 +74,7 @@ const {
             )
           }
         </div>
+
         {
           content && (
             <div class="intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
@@ -77,27 +83,193 @@ const {
           )
         }
       </div>
-      <div
-        class="intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-      >
-        {
-          image && (
-            <div class="relative m-auto max-w-sm">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Image
-                  class="mx-auto rounded-md w-full"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                  loading="eager"
-                  {...image}
-                />
-              )}
+
+      {
+        image && (
+          <div class="hero-media relative mx-auto overflow-hidden mt-6 md:-mt-12">
+            <div class="hero-phone-scroll">
+              <div class="hero-phone-rise">
+                {typeof image === 'string' ? (
+                  <Fragment set:html={image} />
+                ) : (
+                  <Image
+                    class="mx-auto rounded-md w-full bg-transparent"
+                    widths={[400, 768, 1024, 2040]}
+                    sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                    loading="eager"
+                    {...image}
+                  />
+                )}
+              </div>
             </div>
-          )
-        }
-      </div>
+
+            <div class="hero-gradient absolute inset-x-0 bottom-0 pointer-events-none" aria-hidden="true"></div>
+          </div>
+        )
+      }
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes phone-rise {
+    from {
+      transform: translateY(72px) scale(0.96);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .hero-media {
+    isolation: isolate;
+    /* clip-path ensures composited (will-change) children can't bleed above this box */
+    clip-path: inset(0);
+    height: 650px;
+    max-width: 560px;
+  }
+
+  /* Portrait / mobile */
+  @media (max-width: 767px) {
+    .hero-media {
+      height: 450px;
+    }
+  }
+
+  .hero-phone-scroll {
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: center bottom;
+    will-change: transform;
+  }
+
+  .hero-phone-rise {
+    opacity: 0;
+    animation: phone-rise 1s cubic-bezier(0.34, 1.4, 0.64, 1) 1000ms both;
+    will-change: transform, opacity;
+  }
+
+  .hero-gradient {
+    height: 110px;
+    background: linear-gradient(
+      to top,
+      #ffffff 0%,
+      #ffffff 32%,
+      rgba(255, 255, 255, 0.9) 52%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 10;
+    will-change: height;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-phone-scroll {
+      transform: none !important;
+    }
+
+    .hero-phone-rise {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var CLEANUP_KEY = '__aislepalHeroScrollCleanup';
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function initHeroScroll() {
+      if (window[CLEANUP_KEY]) {
+        window[CLEANUP_KEY]();
+      }
+
+      var heroes = Array.prototype.slice.call(document.querySelectorAll('[data-hero-scroll]'));
+      if (!heroes.length) return;
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var ticking = false;
+
+      function getScrollY() {
+        return (
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          0
+        );
+      }
+
+      function updateHeroScroll() {
+        var scrollY = getScrollY();
+
+        heroes.forEach(function (hero) {
+          var media = hero.querySelector('.hero-media');
+          var phone = hero.querySelector('.hero-phone-scroll');
+          var gradient = hero.querySelector('.hero-gradient');
+
+          if (!media || !gradient) return;
+
+          var heroTop = hero.getBoundingClientRect().top + scrollY;
+
+          /*
+            Use Math.max(0, heroTop) because this Hero has md:-mt-[76px].
+            Without this, progress may start offset on desktop.
+          */
+          heroTop = Math.max(0, heroTop);
+
+          var progress = clamp((scrollY - heroTop) / 520, 0, 1);
+
+          var gradientHeight = 90 + progress * 220;
+          gradient.style.height = gradientHeight + 'px';
+
+          if (phone && !reduceMotion) {
+            // Scale up from 0.72 → 1.0 (grows into view)
+            var phoneScale = 0.72 + progress * 0.28;
+            // Rise up, but cap so it never bleeds past the container top
+            // clip-path on .hero-media also enforces this at the paint level
+            var phoneY = 24 - progress * 60;
+            // Tilt from -6deg → 0deg (phone straightens as it scales in)
+            var phoneRot = -6 + progress * 6;
+
+            phone.style.transform =
+              'translate3d(0, ' + phoneY + 'px, 0) scale(' + phoneScale + ') rotateZ(' + phoneRot + 'deg)';
+          }
+        });
+
+        ticking = false;
+      }
+
+      function requestUpdate() {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateHeroScroll);
+      }
+
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate);
+
+      updateHeroScroll();
+      setTimeout(updateHeroScroll, 100);
+      setTimeout(updateHeroScroll, 500);
+
+      window[CLEANUP_KEY] = function () {
+        window.removeEventListener('scroll', requestUpdate);
+        window.removeEventListener('resize', requestUpdate);
+      };
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHeroScroll, { once: true });
+    } else {
+      initHeroScroll();
+    }
+
+    document.addEventListener('astro:page-load', initHeroScroll);
+  })();
+</script>

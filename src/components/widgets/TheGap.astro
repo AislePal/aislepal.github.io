@@ -1,0 +1,490 @@
+﻿---
+---
+
+<section class="tg" data-tg-reveal aria-label="Two gaps draining physical retail">
+  <div class="tg-inner">
+
+    <!-- CHART -->
+    <div class="tg-chart">
+      <svg class="tg-chart__svg" viewBox="0 0 880 380" aria-hidden="true">
+        <defs>
+          <linearGradient id="tg-scangrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0"   stop-color="#00ABB8" stop-opacity="0" />
+            <stop offset="0.5" stop-color="#00ABB8" stop-opacity="0.22" />
+            <stop offset="1"   stop-color="#00ABB8" stop-opacity="0" />
+          </linearGradient>
+          <clipPath id="tg-wedgeclip">
+            <path d="M60,258 C220,232 340,206 460,170 C600,128 720,96 820,72 L820,236 C720,240 600,244 460,250 C340,255 220,256 60,258 Z" />
+          </clipPath>
+        </defs>
+
+        <!-- gap label — centered in chart area, above the ecom curve -->
+        <text class="tg-gaplabel" text-anchor="middle" x="340" y="136">THE MISSING INTELLIGENCE LAYER</text>
+        <text class="tg-gapsub"   text-anchor="middle" x="340" y="153">intent falls through every day</text>
+
+        <line class="tg-grid" x1="60" y1="110" x2="820" y2="110" />
+        <line class="tg-grid" x1="60" y1="200" x2="820" y2="200" />
+        <line class="tg-axis" x1="60" y1="320" x2="820" y2="320" />
+
+        <!-- wedge = the missing intelligence layer -->
+        <path class="tg-wedge" d="M60,258 C220,232 340,206 460,170 C600,128 720,96 820,72 L820,236 C720,240 600,244 460,250 C340,255 220,256 60,258 Z" />
+
+        <!-- ambient scene confined to the wedge -->
+        <g clip-path="url(#tg-wedgeclip)">
+          <rect class="tg-scan-svg" x="-140" y="40" width="140" height="300" />
+          <circle class="tg-fall-svg f1" cx="500" cy="152" r="4.5" />
+          <circle class="tg-fall-svg f2" cx="618" cy="122" r="4.5" />
+          <circle class="tg-fall-svg f3" cx="700" cy="106" r="4.5" />
+          <circle class="tg-fall-svg f4" cx="772" cy="94"  r="4.5" />
+        </g>
+
+        <!-- curves -->
+        <path class="tg-line tg-line--store" d="M60,258 C220,256 340,255 460,250 C600,244 720,240 820,236" />
+        <path class="tg-line tg-line--ecom"  d="M60,258 C220,232 340,206 460,170 C600,128 720,96 820,72" />
+        <circle class="tg-dot tg-dot--store" cx="820" cy="236" r="5" />
+        <circle class="tg-dot tg-dot--ecom tg-pulse" cx="820" cy="72" r="7" />
+
+        <text class="tg-clabel"               x="700" y="56">E-commerce</text>
+        <text class="tg-clabel tg-clabel--muted" x="700" y="278">In-store</text>
+
+        <!-- hover probe (shows on pointermove) -->
+        <g class="tg-hover">
+          <line class="tg-hguide" x1="60" y1="48" x2="60" y2="320" />
+          <line class="tg-hgap"   x1="60" y1="258" x2="60" y2="258" />
+          <line class="tg-htick tg-htick--top" x1="53" y1="258" x2="67" y2="258" />
+          <line class="tg-htick tg-htick--bot" x1="53" y1="258" x2="67" y2="258" />
+          <circle class="tg-hdot tg-hdot--s" cx="60" cy="258" r="4.5" />
+          <circle class="tg-hdot tg-hdot--e" cx="60" cy="258" r="6" />
+        </g>
+      </svg>
+
+      <!-- 3 floating intent slots — JS cycles text through all 18 intents -->
+      <div class="tg-intents" aria-hidden="true">
+        <span class="tg-intent tg-intent-slot" data-float="b" style="left:28%;top:65%;"></span>
+        <span class="tg-intent tg-intent-slot" data-float="c" style="left:57%;top:53%;"></span>
+        <span class="tg-intent tg-intent-slot" data-float="e" style="left:84%;top:43%;"></span>
+      </div>
+
+      <div class="tg-htip" aria-hidden="true">
+        <span>The gap</span>
+        <span class="tg-htip__bar"><i></i></span>
+      </div>
+    </div>
+
+    <!-- GAP BOXES -->
+    <div class="tg-annos">
+      <article class="tg-anno tg-rise d1" tabindex="0">
+        <span class="tg-anno__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 17h6v-6"/><path d="m22 17-8.5-8.5-5 5L2 7"/>
+          </svg>
+        </span>
+        <div class="tg-anno__body">
+          <span class="tg-anno__label">The sales gap</span>
+          <h3>Friction kills baskets.</h3>
+          <p>Shoppers can't find products. Aisles confuse. Out-of-stocks hide until the shelf. Lines slow checkout. Every friction point is a smaller basket — or an abandoned trip.</p>
+        </div>
+      </article>
+      <article class="tg-anno tg-rise d2" tabindex="0">
+        <span class="tg-anno__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </span>
+        <div class="tg-anno__body">
+          <span class="tg-anno__label">The intent gap</span>
+          <h3>You see what was bought, not what was wanted.</h3>
+          <p>E-commerce captures every search, browse and abandoned cart. Stores capture transactions — only after the customer decided, or gave up. The data gap compounds every day.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- CONVERGING BRACKET -->
+    <div class="tg-merge tg-rise d3" aria-hidden="true">
+      <i class="ml"></i><i class="mr"></i><i class="mh"></i><i class="md"></i><i class="mdot"></i>
+    </div>
+
+    <!-- ROOT -->
+    <div class="tg-root tg-rise d3">
+      <span class="tg-root__label">The root</span>
+      <p class="tg-root__line">Both gaps share one cause: there's <b>no intelligence layer</b> between the shopper and the shelf.</p>
+    </div>
+
+  </div>
+</section>
+
+<style is:global>
+/* ── TheGap design tokens ── */
+.tg {
+  --ap-font-sans: 'Inter Variable', system-ui, sans-serif;
+  --ap-ink: #101010;
+  --ap-ink-4: #8A9199;
+  --ap-fg-2: rgba(16,16,16,0.60);
+  --ap-fg-3: rgba(16,16,16,0.40);
+  --ap-teal: #00ABB8;
+  --ap-teal-50: #F0FAFA;
+  --ap-teal-100: #D0F2F4;
+  --ap-teal-200: #A0E5E9;
+  --ap-teal-700: #005C61;
+  --ap-teal-800: #00474B;
+  --ap-surface: #FFFFFF;
+  --ap-border: #E5E7EB;
+  --ap-bg-2: #F3F4F6;
+  --ap-shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --ap-shadow-sm: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+  --ap-shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --ap-r-sm: 6px;
+  --ap-r-lg: 12px;
+  --ap-r-pill: 9999px;
+  --ap-fs-xs: 0.75rem;
+  --ap-fs-sm: 0.875rem;
+  --ap-fs-h4: 1.25rem;
+  --ap-fw-medium: 500;
+  --ap-fw-semibold: 600;
+  --ap-lh-snug: 1.35;
+  --ap-lh-loose: 1.6;
+  --ap-tracking-eyebrow: 0.08em;
+  --ap-tracking-tight: -0.01em;
+  --ap-dur: 0.2s;
+  --ap-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Section frame ── */
+.tg {
+  position: relative;
+  container-type: inline-size;
+  container-name: tg;
+  padding-block: 0;
+  font-family: var(--ap-font-sans);
+}
+.tg-inner { max-width: 1080px; margin: 0 auto; }
+
+/* ── Root summary ── */
+.tg-root { text-align: center; max-width: 720px; margin: 0 auto; }
+.tg-root__label {
+  display: inline-block;
+  font-size: var(--ap-fs-xs); font-weight: var(--ap-fw-semibold);
+  letter-spacing: var(--ap-tracking-eyebrow); text-transform: uppercase;
+  color: var(--ap-fg-3); margin-bottom: 10px;
+}
+.tg-root__line {
+  font-size: var(--ap-fs-h4); line-height: var(--ap-lh-snug);
+  font-weight: var(--ap-fw-medium); color: var(--ap-ink); margin: 0; text-wrap: balance;
+}
+.tg-root__line b { color: var(--ap-teal-700); font-weight: var(--ap-fw-semibold); }
+
+/* ── Chart ── */
+.tg-chart { position: relative; max-width: 880px; margin: 0 auto clamp(10px,1.5vw,16px); cursor: crosshair; }
+.tg-chart__svg { display: block; width: 100%; height: auto; overflow: visible; }
+.tg-chart__svg text { font-family: var(--ap-font-sans); }
+.tg-axis { stroke: var(--ap-border); stroke-width: 1.5; }
+.tg-grid { stroke: var(--ap-border); stroke-width: 1; stroke-dasharray: 2 6; opacity: 0.7; }
+.tg-wedge { fill: var(--ap-teal-100); }
+.tg-line { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.tg-line--ecom  { stroke: var(--ap-teal); }
+.tg-line--store { stroke: var(--ap-ink-4); stroke-dasharray: 7 7; }
+.tg-dot--store  { fill: var(--ap-ink-4); }
+.tg-dot--ecom   { fill: var(--ap-teal); stroke: #fff; stroke-width: 2.5; }
+.tg-clabel      { font-size: 15px; font-weight: 600; fill: var(--ap-teal-700); }
+.tg-clabel--muted { fill: var(--ap-fg-3); }
+.tg-scan-svg    { fill: url(#tg-scangrad); }
+.tg-fall-svg    { fill: var(--ap-teal); opacity: 0; }
+.tg-gaplabel    { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; fill: var(--ap-teal-800); }
+.tg-gapsub      { font-size: 11px; font-weight: 500; letter-spacing: 0.04em; fill: var(--ap-teal-700); }
+
+/* ── Floating intent chips ── */
+.tg-intents { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.tg-intent {
+  position: absolute;
+  font-size: clamp(10px, 1.3cqw, 12.5px); font-weight: var(--ap-fw-medium); color: var(--ap-teal-800);
+  background: rgba(255,255,255,0.9); border: 1px solid var(--ap-teal-200);
+  border-radius: var(--ap-r-pill); padding: 5px 11px;
+  box-shadow: var(--ap-shadow-xs); white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* ── Hover gap probe ── */
+.tg-hover { opacity: 0; transition: opacity 0.15s var(--ap-ease); }
+.tg-chart.is-hover .tg-hover   { opacity: 1; }
+.tg-chart.is-hover .tg-intents { opacity: 0.70; transition: opacity 0.2s var(--ap-ease); }
+.tg-hguide { stroke: var(--ap-border); stroke-width: 1; stroke-dasharray: 3 4; }
+.tg-hgap   { stroke: var(--ap-teal); stroke-width: 3; stroke-linecap: round; }
+.tg-htick  { stroke: var(--ap-teal); stroke-width: 2; stroke-linecap: round; }
+.tg-hdot--e { fill: var(--ap-teal); stroke: #fff; stroke-width: 2; }
+.tg-hdot--s { fill: var(--ap-ink-4); }
+.tg-htip {
+  position: absolute; top: 0; left: 0; pointer-events: none; opacity: 0;
+  transform: translate(12px, -50%); transition: opacity 0.15s var(--ap-ease);
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  background: #fff; border: 1px solid var(--ap-border); box-shadow: var(--ap-shadow-sm);
+  border-radius: var(--ap-r-pill); padding: 5px 12px;
+  font-size: 11px; font-weight: var(--ap-fw-semibold); letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--ap-teal-800);
+}
+.tg-htip.flip { transform: translate(calc(-100% - 12px), -50%); }
+.tg-chart.is-hover .tg-htip { opacity: 1; }
+.tg-htip__bar { display: inline-block; width: 46px; height: 5px; border-radius: 3px; background: var(--ap-bg-2); overflow: hidden; }
+.tg-htip__bar i { display: block; height: 100%; width: 0; background: var(--ap-teal); border-radius: 3px; transition: width 0.08s linear; }
+
+/* ── Gap boxes ── */
+.tg-annos { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px,2vw,24px); }
+.tg-anno {
+  display: flex; gap: 14px; background: var(--ap-surface); border: 1px solid var(--ap-border);
+  border-radius: var(--ap-r-lg); padding: clamp(20px,2.4vw,28px);
+  transition: border-color var(--ap-dur) var(--ap-ease), box-shadow var(--ap-dur) var(--ap-ease);
+}
+.tg-anno:hover,
+.tg-anno:focus-within { border-color: var(--ap-teal); box-shadow: var(--ap-shadow-md); }
+.tg-anno__icon {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--ap-r-sm);
+  background: var(--ap-teal-50); color: var(--ap-teal-700); display: grid; place-items: center;
+}
+.tg-anno__icon svg { width: 22px; height: 22px; }
+.tg-anno__body { display: flex; flex-direction: column; gap: 8px; }
+.tg-anno__label { font-size: var(--ap-fs-xs); font-weight: var(--ap-fw-semibold); letter-spacing: var(--ap-tracking-eyebrow); text-transform: uppercase; color: var(--ap-teal-700); }
+.tg-anno h3 { font-size: var(--ap-fs-h4); font-weight: var(--ap-fw-semibold); line-height: var(--ap-lh-snug); letter-spacing: var(--ap-tracking-tight); margin: 0; color: var(--ap-ink); }
+.tg-anno p  { font-size: var(--ap-fs-sm); line-height: var(--ap-lh-loose); color: var(--ap-fg-2); margin: 0; }
+
+/* ── Converging bracket ── */
+.tg-merge { position: relative; height: 52px; }
+.tg-merge i { position: absolute; background: var(--ap-border); }
+.tg-merge .ml  { left: 25%;               top: 0;    width: 1.5px; height: 26px; }
+.tg-merge .mr  { left: 75%;               top: 0;    width: 1.5px; height: 26px; }
+.tg-merge .mh  { left: 25%; width: 50%;   top: 25px; height: 1.5px; }
+.tg-merge .md  { left: calc(50% - 0.75px);top: 25px; width: 1.5px; height: 26px; }
+.tg-merge .mdot { left: calc(50% - 4px); bottom: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--ap-teal); }
+
+/* ── Motion ── */
+@media (prefers-reduced-motion: no-preference) {
+  .tg .tg-rise { opacity: 0; }
+  .tg.in-view .tg-rise    { animation: tg-rise 0.6s var(--ap-ease) both; }
+  .tg.in-view .tg-rise.d1 { animation-delay: 0.10s; }
+  .tg.in-view .tg-rise.d2 { animation-delay: 0.20s; }
+  .tg.in-view .tg-rise.d3 { animation-delay: 0.32s; }
+
+  .tg.in-view .tg-wedge   { animation: tg-wipe 1.1s var(--ap-ease) 0.2s both; }
+
+  .tg .tg-line             { stroke-dasharray: 1000; stroke-dashoffset: 1000; }
+  .tg.in-view .tg-line     { animation: tg-draw 1.4s var(--ap-ease) both; }
+
+  .tg .tg-dot              { opacity: 0; }
+  .tg.in-view .tg-dot      { animation: tg-pop 0.4s var(--ap-ease) 1.3s both; }
+  .tg.in-view .tg-pulse    {
+    animation: tg-pop 0.4s var(--ap-ease) 1.3s both, tg-breathe 2.6s var(--ap-ease) 1.7s infinite;
+    transform-box: fill-box; transform-origin: center;
+  }
+
+  .tg.in-view .tg-scan-svg    { animation: tg-scan-x 4s linear 1.4s infinite; }
+  .tg.in-view .tg-fall-svg    { animation: tg-fall-y 2.8s ease-in 1.6s infinite; }
+  .tg.in-view .tg-fall-svg.f2 { animation-delay: 2.3s; }
+  .tg.in-view .tg-fall-svg.f3 { animation-delay: 3.0s; }
+  .tg.in-view .tg-fall-svg.f4 { animation-delay: 3.7s; }
+
+  /* floating chip drift — only transform, so JS opacity transition works independently */
+  .tg.in-view .tg-intent-slot[data-float="b"] { animation: chip-float-b 7s   ease-in-out infinite; }
+  .tg.in-view .tg-intent-slot[data-float="c"] { animation: chip-float-c 8s   ease-in-out infinite; }
+  .tg.in-view .tg-intent-slot[data-float="e"] { animation: chip-float-e 7.5s ease-in-out infinite; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-intent-slot { transform: translate(-50%, -50%) !important; }
+}
+
+@keyframes tg-rise    { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+@keyframes tg-draw    { from { stroke-dashoffset:1000; } to { stroke-dashoffset:0; } }
+@keyframes tg-wipe    { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
+@keyframes tg-pop     { from { opacity:0; transform:scale(0.4); } to { opacity:1; transform:scale(1); } }
+@keyframes tg-breathe { 0%,100% { opacity:1; } 50% { opacity:0.55; } }
+@keyframes tg-scan-x  { 0% { transform:translateX(-140px); } 60%,100% { transform:translateX(1040px); } }
+@keyframes tg-fall-y  { 0% { transform:translateY(0); opacity:0; } 14% { opacity:1; } 78% { opacity:0.6; } 100% { transform:translateY(140px); opacity:0; } }
+
+/* chip drift — only animates transform so JS can control opacity separately */
+@keyframes chip-float-b {
+  /* minimal y drift for the narrow left portion of the gap */
+  0%,100% { transform:translate(-50%,-50%) translate(  0px,  0px); }
+     40%  { transform:translate(-50%,-50%) translate( 7px,  2px); }
+     70%  { transform:translate(-50%,-50%) translate(-4px, -2px); }
+}
+@keyframes chip-float-c {
+  0%,100% { transform:translate(-50%,-50%) translate(  0px,  0px); }
+     40%  { transform:translate(-50%,-50%) translate( 8px,  6px); }
+     70%  { transform:translate(-50%,-50%) translate(-4px,  6px); }
+}
+@keyframes chip-float-e {
+  0%,100% { transform:translate(-50%,-50%) translate(  0px,  0px); }
+     40%  { transform:translate(-50%,-50%) translate( 5px, -6px); }
+     70%  { transform:translate(-50%,-50%) translate(-5px, -3px); }
+}
+
+/* ── Responsive ── */
+@container tg (max-width: 620px) {
+  .tg-annos { grid-template-columns: 1fr; }
+  .tg-merge { display: none; }
+  .tg-intent { font-size: 10px; padding: 3px 8px; }
+}
+</style>
+
+<script>
+/* ── Reveal on scroll ── */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function init(root) {
+    var revealed = false;
+    function reveal() {
+      if (revealed) return;
+      revealed = true;
+      root.classList.add('in-view');
+    }
+    function inVp() {
+      var r = root.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      return r.top < vh * 0.82 && r.bottom > vh * 0.18;
+    }
+    function chk() { if (!revealed && inVp()) reveal(); }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) reveal(); });
+      }, { threshold: 0.2 });
+      io.observe(root);
+    }
+    window.addEventListener('scroll', chk, { passive: true });
+    window.addEventListener('resize', chk);
+    chk();
+    setTimeout(chk, 60);
+    if (reduce) reveal();
+  }
+  function boot() { document.querySelectorAll('.tg[data-tg-reveal]').forEach(init); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+
+/* ── Interactive gap probe ── */
+(function () {
+  function buildLUT(path, n) {
+    var len = path.getTotalLength(), a = [];
+    for (var i = 0; i <= n; i++) {
+      var p = path.getPointAtLength(len * i / n);
+      a.push({ x: p.x, y: p.y });
+    }
+    return a;
+  }
+  function yAt(lut, x) {
+    if (x <= lut[0].x) return lut[0].y;
+    var last = lut[lut.length - 1];
+    if (x >= last.x) return last.y;
+    for (var i = 0; i < lut.length - 1; i++) {
+      var a = lut[i], b = lut[i + 1];
+      if (x >= a.x && x <= b.x) {
+        var t = (x - a.x) / ((b.x - a.x) || 1);
+        return a.y + (b.y - a.y) * t;
+      }
+    }
+    return last.y;
+  }
+  function init(chart) {
+    var ecom  = chart.querySelector('.tg-line--ecom');
+    var store = chart.querySelector('.tg-line--store');
+    if (!ecom || !store) return;
+    var hgap  = chart.querySelector('.tg-hgap');
+    var htop  = chart.querySelector('.tg-htick--top');
+    var hbot  = chart.querySelector('.tg-htick--bot');
+    var guide = chart.querySelector('.tg-hguide');
+    var dotE  = chart.querySelector('.tg-hdot--e');
+    var dotS  = chart.querySelector('.tg-hdot--s');
+    var tip   = chart.querySelector('.tg-htip');
+    var bar   = chart.querySelector('.tg-htip__bar i');
+    var VBW = 880, VBH = 380, X0 = 60, X1 = 820, GAPMAX = 164;
+    var lutE = null, lutS = null;
+    function ensure() {
+      if (!lutE) { lutE = buildLUT(ecom, 260); lutS = buildLUT(store, 260); }
+    }
+    function set(el, attrs) { for (var k in attrs) el.setAttribute(k, attrs[k]); }
+    function move(e) {
+      ensure();
+      var rect = chart.getBoundingClientRect();
+      var cx = e.touches ? e.touches[0].clientX : e.clientX;
+      var fx = (cx - rect.left) / rect.width;
+      var vbX = Math.max(X0, Math.min(X1, fx * VBW));
+      var yE = yAt(lutE, vbX), yS = yAt(lutS, vbX);
+      set(guide, { x1: vbX, x2: vbX });
+      set(hgap,  { x1: vbX, x2: vbX, y1: yE, y2: yS });
+      set(htop,  { x1: vbX - 7, x2: vbX + 7, y1: yE, y2: yE });
+      set(hbot,  { x1: vbX - 7, x2: vbX + 7, y1: yS, y2: yS });
+      set(dotE,  { cx: vbX, cy: yE });
+      set(dotS,  { cx: vbX, cy: yS });
+      tip.style.left = (vbX / VBW * rect.width) + 'px';
+      tip.style.top  = (((yE + yS) / 2) / VBH * rect.height) + 'px';
+      tip.classList.toggle('flip', fx > 0.7);
+      if (bar) bar.style.width = Math.max(4, Math.min(100, (yS - yE) / GAPMAX * 100)) + '%';
+      chart.classList.add('is-hover');
+    }
+    function leave() { chart.classList.remove('is-hover'); }
+    chart.addEventListener('pointermove', move);
+    chart.addEventListener('pointerleave', leave);
+    chart.addEventListener('touchmove', move, { passive: true });
+    chart.addEventListener('touchend', leave);
+  }
+  function boot() { document.querySelectorAll('.tg-chart').forEach(init); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+
+/* ── Cycling intents — 3 slots visible at a time ── */
+(function () {
+  var INTENTS = [
+    '“where’s the oat milk?”',
+    '“gluten-free pasta?”',
+    '“any deals today?”',
+    '“is this in stock?”',
+    '“lactose-free options?”',
+    '“what aisle is coffee?”',
+    '“cheaper brand nearby?”',
+    '“is this on sale?”',
+    '“where are the coupons?”',
+    '“organic version?”',
+    '“how do I get to dairy?”',
+    '“shelf is empty here”',
+    '“what aisle is bread?”',
+    '“price match available?”',
+    '“allergen-free option?”',
+    '“can’t find quinoa”',
+    '“do you have this in bulk?”',
+    '“where are the samples?”'
+  ];
+
+  /* Each slot: visible for VISIBLE_MS, then fades over FADE_MS, changes text, fades back in.
+     Slots are staggered so 2-3 are always visible simultaneously. */
+  var VISIBLE_MS = 5000;
+  var FADE_MS    = 800;
+  var STAGGER_MS = (VISIBLE_MS + FADE_MS) / 3; // ≈1933ms between slot starts
+
+  function startSlot(slot, startIdx, startDelay) {
+    var idx = startIdx % INTENTS.length;
+
+    function cycle() {
+      slot.textContent = INTENTS[idx];
+      slot.style.opacity = '1';
+
+      setTimeout(function () {
+        slot.style.opacity = '0';
+        idx = (idx + 3) % INTENTS.length; // advance by 3 (number of slots) for variety
+        setTimeout(cycle, FADE_MS);
+      }, VISIBLE_MS);
+    }
+
+    setTimeout(cycle, startDelay);
+  }
+
+  function boot() {
+    var slots = document.querySelectorAll('.tg-intent-slot');
+    if (!slots.length) return;
+    slots.forEach(function (slot, i) {
+      startSlot(slot, i, i * STAGGER_MS);
+    });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>

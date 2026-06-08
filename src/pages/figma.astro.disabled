@@ -6,6 +6,7 @@ import Steps from '~/components/widgets/Steps.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Transition from '~/components/widgets/Transition.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { contactLink } from '~/navigation';
 
 const metadata = {
   title: 'AislePal',
@@ -20,14 +21,14 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Get Early Access',
-        href: 'https://calendly.com/abdulla-aislepal/30min',
+        href: contactLink,
         target: '_blank',
         rel: 'noopener noreferrer',
       },
       {
         variant: 'secondary',
         text: 'See How it Works',
-        href: 'https://calendly.com/abdulla-aislepal/30min',
+        href: contactLink,
         target: '_blank',
         rel: 'noopener noreferrer',
       },

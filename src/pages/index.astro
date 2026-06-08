@@ -8,11 +8,16 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Industries from '~/components/widgets/Industries.astro';
+import Flywheel from '~/components/widgets/Flywheel.astro';
 import { Icon } from 'astro-icon/components';
 import dashboardMockup from '~/assets/images/dashboard_mockup.png';
-import howItWorks from '~/assets/images/how_it_works.png';
 import deploymentTimeline from '~/assets/images/deployment_timeline.png';
 import erpIntegrations from '~/assets/images/ERP_integrations.png';
+import TheGap from '~/components/widgets/TheGap.astro';
+import TwoSides from '~/components/widgets/TwoSides.astro';
+import Integrations from '~/components/widgets/Integrations.astro';
+import Timeline from '~/components/widgets/Timeline.astro';
+import { contactLink } from '~/navigation';
 
 const metadata = {
   title: 'AislePal — Lift sales today. Capture intent forever.',
@@ -28,29 +33,32 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Book a Demo',
-        href: 'https://calendly.com/abdulla-aislepal/30min',
+        href: contactLink,
         target: '_blank',
         rel: 'noopener noreferrer',
       },
       {
         variant: 'secondary',
         text: 'Join a Pilot',
-        href: 'https://calendly.com/abdulla-aislepal/30min',
+        href: contactLink,
         target: '_blank',
         rel: 'noopener noreferrer',
       },
     ]}
     image={{
-      src: '~/assets/images/hero-image.png',
+      src: '~/assets/images/phone-mockup-2.png',
       alt: 'AislePal Hero Image',
     }}
   >
     <Fragment slot="title">
-      Lift sales <span class="text-gradient">today</span>. <br />Capture intent <span class="text-gradient">forever</span>
+      Lift sales <span class="text-gradient">today</span>. <br />Capture intent <span class="text-gradient"
+        >forever</span
+      >.
     </Fragment>
 
     <Fragment slot="subtitle">
-      AislePal gives shoppers a faster, easier way to find what they want — and turns every search, scan, and step into the intent data your store has never had.
+      AislePal gives shoppers a faster, easier way to find what they want — and turns every search, scan, and step into
+      the intent data your store has never had.
     </Fragment>
 
     <Fragment slot="content">
@@ -66,7 +74,7 @@ const metadata = {
               <div class="w-8 h-8 shrink-0 flex items-center justify-center bg-white rounded-full shadow-sm outline outline-[0.5px] outline-[#EBEBEB]">
                 <Icon name={icon} class="text-gray-500 dark:text-slate-400 w-4 h-4" />
               </div>
-              <span class="text-[#627678] text-base sm:text-lg font-medium">{label}</span>
+              <span class="text-[#627678] text-base sm:text-md font-medium">{label}</span>
             </div>
           ))
         }
@@ -170,11 +178,12 @@ const metadata = {
   <Content
     id="problem"
     tagline="WHY IN-STORE FALLS BEHIND"
-    title="Two gaps are draining physical retail."
-    subtitle="E-commerce wins on convenience and intelligence. Stores lose on both — every day, in every aisle."
+    title="Two gaps are <span class='text-gradient'>draining</span> physical retail."
+    subtitle="E-commerce wins on convenience and intelligence.<br>Stores lose on both — every day, in every aisle."
   >
     <Fragment slot="content">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <TheGap />
+      <!-- <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900">
           <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide bg-red-50 text-red-600 mb-4">
             The sales gap
@@ -205,7 +214,7 @@ const metadata = {
         <p class="text-gray-700 dark:text-slate-200 font-medium">
           Both gaps share one cause: there's no intelligence layer between the shopper and the shelf.
         </p>
-      </div>
+      </div> -->
     </Fragment>
   </Content>
 
@@ -213,16 +222,12 @@ const metadata = {
   <Content
     id="how-it-works"
     tagline="HOW IT WORKS"
-    title="One product. <span class='text-gradient'>Two compounding wins.</span>"
+    title="One product.<br><span class='text-gradient'>Two compounding wins.</span>"
     subtitle="Shoppers use AislePal because it's faster. That's how you build the data foundation no competitor can replicate."
+    classes={{ headline: { container: 'max-w-xl sm:mx-auto lg:max-w-2xl mb-2 md:mb-4' } }}
   >
-    <Fragment slot="image">
-      <img
-        src={howItWorks.src}
-        alt="AislePal how it works — four steps"
-        class="mx-auto w-full rounded-lg"
-        loading="lazy"
-      />
+    <Fragment slot="content">
+      <Flywheel />
     </Fragment>
   </Content>
 
@@ -275,83 +280,13 @@ const metadata = {
 
   <!-- Two Sides Section ******************* -->
   <Content
+    id="features"
     tagline="WHAT EACH SIDE GETS"
-    title="Built for the aisle. <span class='text-gradient'>Built for the dashboard.</span>"
+    title="Built for the aisle.<br><span class='text-gradient'>Built for the dashboard.</span>"
     subtitle="AislePal is one product with two interfaces — the shopper-facing web app, and the retailer-facing intelligence platform."
   >
     <Fragment slot="content">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900">
-          <h3 class="text-lg font-semibold mb-1">For shoppers</h3>
-          <p class="text-sm text-muted dark:text-slate-400 mb-6">Convenience that feels like online.</p>
-          <div class="space-y-6">
-            {
-              [
-                {
-                  icon: 'tabler:search',
-                  title: 'Discover',
-                  body: 'Search naturally — "organic milk under $6." See what\'s in stock, ranked, and on promotion.',
-                },
-                {
-                  icon: 'tabler:map-pin',
-                  title: 'Navigate',
-                  body: 'Aisle-level guidance to every product. No more wandering, no more giving up.',
-                },
-                {
-                  icon: 'tabler:shopping-cart',
-                  title: 'Check out',
-                  body: 'Optional in-aisle scan-and-pay. Skip the line. Faster trips, fuller carts.',
-                },
-              ].map(({ icon, title, body }) => (
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 shrink-0 flex items-center justify-center rounded-lg bg-[#4b9ea5]/10">
-                    <Icon name={icon} class="w-5 h-5 text-[#4b9ea5]" />
-                  </div>
-                  <div>
-                    <p class="font-semibold mb-1">{title}</p>
-                    <p class="text-sm text-muted dark:text-slate-300">{body}</p>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-        <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900">
-          <h3 class="text-lg font-semibold mb-1">For your store</h3>
-          <p class="text-sm text-muted dark:text-slate-400 mb-6">The intent layer e-commerce has had for 20 years.</p>
-          <div class="space-y-6">
-            {
-              [
-                {
-                  icon: 'tabler:bulb',
-                  title: 'Search intelligence',
-                  body: "Know what shoppers wanted — including products you don't carry. Identify lost sales before they become lost customers.",
-                },
-                {
-                  icon: 'tabler:route',
-                  title: 'Navigation patterns',
-                  body: 'See how shoppers actually move through the store. Where they slow down, where they give up. Optimize layout based on behavior.',
-                },
-                {
-                  icon: 'tabler:chart-bar',
-                  title: 'Demand forecasting',
-                  body: 'Use search and browse signals to predict demand before it hits the register. Plan inventory on intent, not just history.',
-                },
-              ].map(({ icon, title, body }) => (
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 shrink-0 flex items-center justify-center rounded-lg bg-[#4b9ea5]/10">
-                    <Icon name={icon} class="w-5 h-5 text-[#4b9ea5]" />
-                  </div>
-                  <div>
-                    <p class="font-semibold mb-1">{title}</p>
-                    <p class="text-sm text-muted dark:text-slate-300">{body}</p>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </div>
+      <TwoSides />
     </Fragment>
   </Content>
 
@@ -359,13 +294,13 @@ const metadata = {
   <Stats
     id="results"
     tagline="THE FINANCIAL CASE"
-    title="Pays for itself in quarter one. <span class='text-gradient'>Compounds for years after.</span>"
+    title="Pays for itself in quarter one.<br><span class='text-gradient'>Compounds for years after.</span>"
     subtitle="AislePal delivers measurable sales lift on day one. The intent data it captures becomes a strategic asset that grows in value with every shopper."
     stats={[
       { title: 'Average basket size increase', amount: '23%' },
       { title: 'Improvement in promotion ROI', amount: '31%' },
       { title: 'Reduction in stockout impact', amount: '23%' },
-      { title: 'Increase in customer insights vs loyalty data', amount: '2.4×' },
+      { title: 'Increase in customer insights', amount: '2.4×' },
     ]}
   />
 
@@ -376,13 +311,8 @@ const metadata = {
     title="Live in two weeks. <span class='text-gradient'>No construction required.</span>"
     subtitle="AislePal deploys without hardware installation, store modification, or six-month IT projects."
   >
-    <Fragment slot="image">
-      <img
-        src={deploymentTimeline.src}
-        alt="AislePal deployment timeline — Setup, Integration, Customization, Deployment over 14 days"
-        class="mx-auto w-full rounded-lg"
-        loading="lazy"
-      />
+    <Fragment slot="content">
+      <Timeline />
     </Fragment>
   </Content>
 
@@ -394,18 +324,21 @@ const metadata = {
     title="Plugs into the systems <span class='text-gradient'>you already run.</span>"
     subtitle="POS, ERP, inventory, and loyalty — connected in days, not months."
   >
-    <Fragment slot="image">
+    <Fragment slot="content">
+      <Integrations />
+    </Fragment>
+    <!-- <Fragment slot="image">
       <img
         src={erpIntegrations.src}
         alt="AislePal integration diagram"
         class="mx-auto w-full rounded-lg"
         loading="lazy"
       />
-    </Fragment>
+    </Fragment> -->
   </Content>
 
   <!-- Industries Section ******************* -->
-  <Industries
+  <!-- <Industries
     id="industries"
     tagline="INDUSTRIES"
     title="Who we're <span class='text-gradient'>built for</span>"
@@ -417,13 +350,13 @@ const metadata = {
       { name: 'Pharmacy', image: '~/assets/images/industries/pharmacy.png' },
       { name: 'Specialty', image: '~/assets/images/industries/speciality.png' },
     ]}
-  />
+  /> -->
 
   <!-- FAQs Section ******************* -->
   <FAQs
     id="faq"
     tagline="FAQ"
-    title="Questions, <span class='text-gradient'>honestly answered.</span>"
+    title="Questions, <span class='text-gradient'>honestly answered</span>."
     subtitle="Common questions from retail decision-makers evaluating AislePal."
     columns={1}
     classes={{ container: 'max-w-4xl' }}
@@ -470,26 +403,25 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
   <CallToAction
     id="contact"
+    fullScreen
     actions={[
       {
         variant: 'primary',
         text: 'Book a Demo',
-        href: 'https://calendly.com/abdulla-aislepal/30min',
+        href: contactLink,
         icon: 'tabler:calendar',
       },
       {
         variant: 'secondary',
         text: 'Join a Pilot',
-        href: 'https://calendly.com/abdulla-aislepal/30min',
+        href: contactLink,
         icon: 'tabler:users',
       },
     ]}
   >
     <Fragment slot="title">
-      Bring the advantage back to your <span class="text-gradient">store.</span>
+      Bring the <span class="text-gradient">advantage</span> to your <span class="text-gradient">store</span>.
     </Fragment>
-    <Fragment slot="subtitle">
-      Faster trips today. Smarter decisions forever.
-    </Fragment>
+    <Fragment slot="subtitle"> Faster trips today. Smarter decisions forever. </Fragment>
   </CallToAction>
 </Layout>
