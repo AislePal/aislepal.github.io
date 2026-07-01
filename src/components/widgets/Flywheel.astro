@@ -319,8 +319,13 @@ import faviconSrc from '~/assets/favicons/favicon.svg?url';
     .fw-col--left .fw-card__icon { margin-left: auto; margin-right: 0; }
   }
   @container fw (max-width: 560px) {
-    .fw-layout { grid-template-columns: 1fr; grid-template-areas: "diagram" "left" "right"; }
+    .fw-layout { grid-template-columns: 1fr; grid-template-areas: "diagram" "card01" "card02" "card03" "card04"; }
     .fw-diagram { max-width: 320px; }
+    .fw-col { display: contents; }
+    .fw-card[data-step-card="01"] { grid-area: card01; }
+    .fw-card[data-step-card="02"] { grid-area: card02; }
+    .fw-card[data-step-card="03"] { grid-area: card03; }
+    .fw-card[data-step-card="04"] { grid-area: card04; }
   }
 </style>
 

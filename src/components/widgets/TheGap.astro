@@ -19,8 +19,8 @@
         </defs>
 
         <!-- gap label — centered in chart area, above the ecom curve -->
-        <text class="tg-gaplabel" text-anchor="middle" x="340" y="136">THE MISSING INTELLIGENCE LAYER</text>
-        <text class="tg-gapsub"   text-anchor="middle" x="340" y="153">intent falls through every day</text>
+        <text class="tg-gaplabel" text-anchor="middle" x="340" y="126">THE MISSING INTELLIGENCE LAYER</text>
+        <text class="tg-gapsub"   text-anchor="middle" x="340" y="145">intent falls through every day</text>
 
         <line class="tg-grid" x1="60" y1="110" x2="820" y2="110" />
         <line class="tg-grid" x1="60" y1="200" x2="820" y2="200" />
@@ -189,7 +189,7 @@
 .tg-clabel--muted { fill: var(--ap-fg-3); }
 .tg-scan-svg    { fill: url(#tg-scangrad); }
 .tg-fall-svg    { fill: var(--ap-teal); opacity: 0; }
-.tg-gaplabel    { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; fill: var(--ap-teal-800); }
+.tg-gaplabel    { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; fill: var(--ap-teal-800);}
 .tg-gapsub      { font-size: 11px; font-weight: 500; letter-spacing: 0.04em; fill: var(--ap-teal-700); }
 
 /* ── Floating intent chips ── */
@@ -322,6 +322,8 @@
   .tg-annos { grid-template-columns: 1fr; }
   .tg-merge { display: none; }
   .tg-intent { font-size: 10px; padding: 3px 8px; }
+  .tg-gaplabel { font-size: 25px; transform: translateY(-50px); }
+  .tg-gapsub   { font-size: 20px; transform: translateY(-35px); }
 }
 </style>
 
